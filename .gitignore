@@ -1,0 +1,6 @@
+tmp/
+plugged/
+session/
+.netrwhist
+vim_mru_files
+NERDTreeBookmarks
