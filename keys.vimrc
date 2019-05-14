@@ -109,7 +109,7 @@
   nmap <F3> i<C-R>=strftime("%H:%M %d %b")<CR><Esc>
 
   "  add date to end of line
-  nmap <F4> A `( <Esc><F3>li)`<Del><Esc>
+  nmap <F4> A  ( <Esc><F3>li)<Del><Esc>
 
   " move underneath archive header
   nmap <F7> zRdd /## archive<CR>p``
