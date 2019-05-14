@@ -3,9 +3,9 @@
   let NERDTreeQuitOnOpen=1
   let NERDTreeShowBookmarks=1
   let NERDTreeNaturalSort=1
-  " let NERDTreeChDirMode=1
   let NERDTreeRespectWildIgnore=1
-  let NERDTreeBookmarksFile=expand("$HOME/.vim/NERDTreeBookmarks")
+  let NERDTreeBookmarksFile=expand("$HOME/.vim/local/NERDTreeBookmarks")
+  " let NERDTreeChDirMode=1
   " let NERDTreeStatusLine=-1
   " let g:NERDTreeStatusline="%{matchstr(getline('.'), '\\s\\zs\\w\\(.*\\)')}"
 
