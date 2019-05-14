@@ -21,31 +21,26 @@
 
   augroup NERDTree
     autocmd!
+    autocmd FileType tagbar,nerdtree setlocal signcolumn=no
     autocmd User NERDTreeInit call s:attempt_select_last_file()
-  augroup END
-
-
-  " remove slashes from NERDTree
-  augroup nerdtreehidecwd
-    autocmd!
+    " remove slashes from NERDTree
     autocmd FileType nerdtree setlocal conceallevel=3
       \ | syntax match NERDTreeDirSlash #/$# containedin=NERDTreeDir conceal contained
   augroup end
 
-  autocmd FileType tagbar,nerdtree setlocal signcolumn=no
   " autocmd FileType tagbar,nerdtree setlocal statusline=%#Normal#
 
 
 " -- File highlighting
-  function! NERDTreeHighlightFile(extension,  guifg, guibg)
+  function! NERDTreeHilite(extension,  guifg, guibg)
     exec 'autocmd FileType nerdtree highlight ' . a:extension .' guibg='. a:guibg .' guifg='. a:guifg
     exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
   endfunction
 
-  call NERDTreeHighlightFile('css', 'cyan', 'NONE')
-  call NERDTreeHighlightFile('vue', 'green', 'NONE')
-  call NERDTreeHighlightFile('styl', 'cyan', 'NONE')
-  call NERDTreeHighlightFile('ini', '#771199', 'NONE')
-  call NERDTreeHighlightFile('md',  '#3366aa', 'NONE')
-  call NERDTreeHighlightFile('html', '#994499', 'NONE')
+  call NERDTreeHilite('css', 'cyan', 'NONE')
+  call NERDTreeHilite('vue', 'green', 'NONE')
+  call NERDTreeHilite('styl', 'cyan', 'NONE')
+  call NERDTreeHilite('ini', '#771199', 'NONE')
+  call NERDTreeHilite('md',  '#3366aa', 'NONE')
+  call NERDTreeHilite('html', '#994499', 'NONE')
 

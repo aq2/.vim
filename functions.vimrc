@@ -28,8 +28,10 @@
 
 
 " restore cursor position upon reopening files
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
+  augroup RestoreCursor
+    autocmd!
+    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+  augroup end
 
 " --- change colorscheme ---
   function! ToggleColours()

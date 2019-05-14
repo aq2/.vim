@@ -39,8 +39,10 @@
     endif
   endfunction
 
-
-  au BufWritePost,TextChanged,TextChangedI * call LightlineUpdateAQ()
+  augroup UpdateLightline
+    autocmd!
+    au BufWritePost,TextChanged,TextChangedI * call LightlineUpdateAQ()
+  augroup end
 
 
   nmap <Leader>1 <Plug>lightline#bufferline#go(1)
