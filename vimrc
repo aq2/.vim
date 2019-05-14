@@ -10,10 +10,10 @@
   set background=dark
   set ttyfast termguicolors
   set splitbelow splitright
-  set foldmethod=indent foldenable foldlevelstart=1
   set rnu number numberwidth=5
   set laststatus=2 showcmd noshowmode
   set cursorline scrolloff=9 nostartofline
+  set foldmethod=indent foldenable foldlevelstart=1
 
   set encoding=utf-8
   set hidden autoread
@@ -39,11 +39,14 @@
   set omnifunc=syntaxcomplete#Complete
   set wildmenu wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pdf,*/Music/*,*/Pictures/*
 
+  set nobackup
   set viminfo+=n~/.vim/tmp/viminfo
-  set backup backupdir=~/.vim/tmp/backup//
+  " set backup backupdir=~/.vim/tmp/backup//
   set directory=~/.vim/tmp/swap// directory+=.
   set undofile undodir=~/.vim/tmp/undo undodir+=.
 
+  " only show 10 best spell alternatives
+  set sps=best,10
 
 "  gvim settings
   if has('gui_running')
@@ -65,6 +68,6 @@
   source /home/angelo/.vim/keys.vimrc
   source /home/angelo/.vim/nerd.vimrc
   source /home/angelo/.vim/lightline.vimrc
-  source /home/angelo/.vim/autocommands.vimrc
+  source /home/angelo/.vim/functions.vimrc
   source /home/angelo/.vim/plugin-settings.vimrc
 

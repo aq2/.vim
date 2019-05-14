@@ -1,9 +1,9 @@
   source ~/.vim/colors/gravyLine.vim
-  
+
   let g:lightline = {
       \ 'colorscheme': 'gravyLine',
       \ 'component_function': {
-      \   'gitAQ': 'GitAQ' 
+      \   'gitAQ': 'GitAQ'
       \ },
       \ 'active': {
       \   'left': [['mode'], ['gitAQ'], ['buffers']] ,
@@ -12,7 +12,7 @@
       \ 'subseparator': { 'left': '', 'right': '' },
       \ 'inactive': {},
   \ }
-  
+
   " can we change left?
   " rtfm and do the tutorial!
 
@@ -31,8 +31,8 @@
     else
       return ''
   endfunction
-    
-  
+
+
   function! LightlineUpdateAQ()
     if g:goyo==0
       call lightline#update()

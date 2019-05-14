@@ -6,9 +6,9 @@
   endif
 
   call plug#begin('~/.vim/plugged')
-    " Plug 'digitaltoad/vim-pug'
     Plug 'chrisbra/changesPlugin'
-    Plug 'ervandew/supertab' 
+    " Plug 'digitaltoad/vim-pug'
+    Plug 'ervandew/supertab'
     Plug 'hail2u/vim-css3-syntax'
     " Plug 'iloginow/vim-stylus'
     Plug 'itchyny/lightline.vim'
@@ -29,7 +29,7 @@
     " Plug 'storyn26383/vim-vue'
     Plug 'tpope/vim-commentary'
     Plug 'vimwiki/vimwiki'
-    Plug 'yegappan/mru'
+    " Plug 'yegappan/mru'
     Plug 'yurifury/hexHighlight'
   call plug#end()
 

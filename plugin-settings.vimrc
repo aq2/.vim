@@ -23,15 +23,14 @@
   let g:startify_bookmarks = [ {'w': '~/vimwiki/index.md'} ]
   let g:startify_custom_header = map(startify#fortune#boxed(), '"    ".v:val')
 
-  autocmd User StartifyReady set laststatus=0
-  autocmd User StartifyReady set noruler
   autocmd User StartifyReady setlocal cursorline
+  autocmd User StartifyReady set laststatus=0 noruler
   autocmd User StartifyBufferOpened set laststatus=2
 
   let g:startify_lists = [
-      \ { 'type': 'files',     'header': ['   MRU']            },
-      \ { 'type': 'sessions',  'header': ['   Sessions']       },
-      \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+      \ { 'type': 'files',     'header': ['   MRU']        },
+      \ { 'type': 'sessions',  'header': ['   Sessions']   },
+      \ { 'type': 'bookmarks', 'header': ['   Bookmarks']  },
   \ ]
 
 
@@ -56,11 +55,12 @@
   autocmd! User GoyoEnter nested call <SID>goyo_enter()
 
 
-"... misc
-  let MRU_Add_Menu = 0
-  let MRU_Window_Height = 10
-  let MRU_File = '/home/angelo/.vim/vim_mru_files'
-  let MRU_Exclude_Files = '^/tmp/.*\|^/var/tmp/.*'
+""... misc
+
+"  let MRU_Add_Menu = 0
+"  let MRU_Window_Height = 10
+"  let MRU_File = '/home/angelo/.vim/vim_mru_files'
+"  let MRU_Exclude_Files = '^/tmp/.*\|^/var/tmp/.*'
 
   let g:user_emmet_install_global = 0
   autocmd FileType html,css EmmetInstall
@@ -81,4 +81,4 @@
   autocmd  FileType fzf set laststatus=0 noshowmode noruler
     \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
-  let g:fzf_layout = { 'left': '~25%' }
+  let g:fzf_layout = { 'left': '~28%' }
