@@ -19,8 +19,8 @@
   set hidden autoread
   set ambiwidth=double
   set virtualedit=block
-  set timeout updatetime=100 ttimeoutlen=20
   set clipboard^=unnamed,unnamedplus
+  set timeout updatetime=100 ttimeoutlen=20
 
   set linebreak
   set showbreak=˜
@@ -40,10 +40,10 @@
   set wildmenu wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pdf,*/Music/*,*/Pictures/*
 
   set nobackup
-  set viminfo+=n~/.vim/tmp/viminfo
-  " set backup backupdir=~/.vim/tmp/backup//
-  set directory=~/.vim/tmp/swap// directory+=.
-  set undofile undodir=~/.vim/tmp/undo undodir+=.
+  set viminfo+=n~/.vim/local/viminfo
+  " set backup backupdir=~/.vim/local/backup//
+  set directory=~/.vim/local/swap// directory+=.
+  set undofile undodir=~/.vim/local/undo undodir+=.
 
   " only show 10 best spell alternatives
   set sps=best,10

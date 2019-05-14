@@ -19,7 +19,7 @@
   let g:startify_files_number = 8
   let g:startify_change_to_dir = 1
   let g:startify_enable_special = 0
-  let g:startify_session_dir = '~/.vim/tmp/session'
+  let g:startify_session_dir = '~/.vim/local/session'
   let g:startify_bookmarks = [ {'w': '~/vimwiki/index.md'} ]
   let g:startify_custom_header = map(startify#fortune#boxed(), '"    ".v:val')
 
