@@ -80,17 +80,16 @@
 " --- pluginz/leaderz ---
 
   ab wt :VimwikiTable
-  ab mru :MRU
   nmap <Tab> <Plug>VimwikiNextLink
-  " nnoremap <Leader>m :MRU<CR>
 
   map <Leader>g :Goyo<CR>
   map <Leader>l :Limelight!!<CR>
   map <Leader>u  :MundoToggle<CR>
   map <silent> <Leader>st :Startify<CR>
   nmap <Leader>r <Plug>RefreshColorScheme
-  map <silent> <Leader>n :NERDTreeToggle<CR> | setlocal statusline=%#Normal#<CR>
   nmap <Leader>cm :EC<CR>:CT<CR>:MarkologyDisable<CR>:MarkologyEnable<CR>
+  map <silent> <Leader>n :NERDTreeToggle<CR>
+  " map <silent> <Leader>n :NERDTreeToggle<CR> | setlocal statusline=%#Normal#<CR>
 
   " leader f for side/bottom pane
   nnoremap <Leader>f :FZF<CR>
@@ -104,6 +103,7 @@
   nnoremap <S-F12> :TrailerTrim<CR>
   vnoremap <S-F12> :TrailerTrim<CR>
 
+
 "  archive gubbins
   "  insert date stamp"
   nmap <F3> i<C-R>=strftime("%H:%M %d %b")<CR><Esc>
@@ -113,3 +113,4 @@
 
   " move underneath archive header
   nmap <F7> zRdd /## archive<CR>p``
+
