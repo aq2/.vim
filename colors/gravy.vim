@@ -4,8 +4,8 @@
 "   init
   hi clear
   set t_Co=256
-  " syntax reset
-  " set background=dark
+  syntax reset
+  set background=dark
   let g:colors_name = "gravy"
 
 " set colour variables
@@ -49,7 +49,7 @@
   exe 'hi Normal guifg='s:white' guibg='s:dark
   exe 'hi NonText guifg='s:dgray' guibg='s:dark
 
-"  erm
+"  erm, not sure really
   exe 'hi Search guibg='s:orange
   exe 'hi Visual guifg='s:dark' guibg='s:orange
   exe 'hi IncSearch guifg='s:white' guibg='s:dark
@@ -60,7 +60,7 @@
   exe 'hi Identifier guifg='s:brite' gui=italic'
   exe 'hi Todo guifg='s:dark' guibg='s:brown' gui=bold'
 
-"   line numbers and ui
+"   line numbers and ui stuff
   exe 'hi Folded guifg='s:plum' guibg='s:darker
   exe 'hi LineNr guifg='s:dgray' guibg='s:darker
   exe 'hi VertSplit guifg='s:darker' guibg='s:darker
@@ -86,9 +86,9 @@
   exe 'hi ErrorMsg guifg='s:darker' guibg='s:pink' gui=bold'
   exe 'hi Question guifg='s:orange' guibg='s:dark' gui=bold'
 
-"  diffy
-  exe 'hi DiffAdd guibg='s:greenish
-  exe 'hi DiffChange guibg='s:grayish
+"  diffy daffy duck
+  exe 'hi DiffAdd guibg='s:greenish' guifg='s:brite
+  exe 'hi DiffChange guibg='s:grayish' guifg='s:pink
   exe 'hi DiffText guifg='s:pink' guibg='s:purple' gui=bold'
   exe 'hi DiffDelete guifg='s:plum' guibg='s:darker' gui=none'
 
@@ -106,12 +106,12 @@
   exe 'hi ChangesSignTextAdd guifg='s:dgray' guibg='s:darker
   exe 'hi ChangesSignTextDel guifg='s:dgray' guibg='s:darker
 
+
 "  markology
   exe 'hi MarkologyHLl guifg='s:gray' guibg='s:darker
   exe 'hi MarkologyHLu guifg='s:gray' guibg='s:darker
   exe 'hi MarkologyHLo guifg='s:dgray' guibg='s:darker
   exe 'hi MarkologyHLLine guifg='s:white' guibg='s:dgrape
-
 
 " language specific
   " Python Highlighting
@@ -131,17 +131,16 @@
   exe 'hi htmlLink guifg='s:white' gui=underline'
   exe 'hi htmlSpecialTagName guifg='s:purple
 
-  " Markdown Highlighting 
+  " Markdown Highlighting 
   exe 'hi mkdCode guifg='s:purple
 
-
-" nerd
+" nerd nerds r us
   exe  'hi NERDTreeDir guifg='s:purple
 
-" TrailerTrash
+" TrailerTrash nice
   exe 'hi UnwantedTrailerTrash guibg='s:grape
 
-"→→→ fzf
+"→→→ fzf ftw
   let g:fzf_colors = {
     \ 'fg':      ['fg', 'Normal'],
     \ 'bg':      ['bg', 'PMenu'],
@@ -158,3 +157,4 @@
     \ 'header':  ['fg', 'Comment']
   \ }
 
+  " add shite here

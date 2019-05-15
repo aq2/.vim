@@ -6,6 +6,7 @@
   syntax on
   set backspace=2
   set nocompatible
+  set signcolumn=no
   colorscheme gravy
   set background=dark
   set ttyfast termguicolors
@@ -48,9 +49,11 @@
   " only show 10 best spell alternatives
   set sps=best,10
 
+
 "  gvim settings
   if has('gui_running')
     set go=af ghr=0
+    set lines=28 columns=123
     set linespace=4
     set mousehide mousemodel=popup mouse=a
     set guifont=Fantasque\ Sans\ Mono\ 16

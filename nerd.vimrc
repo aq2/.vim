@@ -44,3 +44,4 @@
   call NERDTreeHilite('md',  '#3366aa', 'NONE')
   call NERDTreeHilite('html', '#994499', 'NONE')
 
+  let NERDTreeMapQuit='<Esc>' 

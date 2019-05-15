@@ -1,10 +1,13 @@
 " --- vim keyboard mapping ---
 
-"   magic spells
-  nmap <Leader>z 1z=
-  map <F5> :setlocal spell! spelllang=en_gb<CR>
-
   map <Leader>ee :setlocal statusline=%#Normal#<CR>
+
+
+"   magic spells
+  map <F5> :setlocal spell! spelllang=en_gb<CR>
+  " auto-accept first correction option
+  nmap <Leader>z 1z=
+
 
 " --- edit/reload dotfiles ---
   nmap <leader>ez :e ~/.zshrc<CR>
@@ -42,6 +45,13 @@
 
   cmap waq wqa<CR>
 
+  nnoremap <Leader>hl :nohl<CR>
+  " map h, to override changes plugin
+  nnoremap <Leader>h :nohl<CR>
+
+  " smarter paste on line above/below, rather than cursor position
+  nnoremap ,p :put "<CR>
+  nnoremap ,P :put! "<CR>
 
 " --- bubbles ---
   " Bubble single lines
@@ -66,14 +76,9 @@
   nnoremap <Leader>q :bd<CR>
   map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
-  " hacky way of overriding changes plugin's mapping
-  nnoremap <Leader>hl :nohl<CR>
-  nunmap <Leader>hl
-  autocmd VimEnter * nnoremap <leader>hl :nohl<CR>
-
   " quick backup file
   map <Leader>b :up \| saveas!
-    \ %:p:r-<C-R>=strftime("%y%m%d-%H:%M")<CR>-bak.<C-R>=expand("%:e")<CR>
+    \ %:p:r-<C-R>=strftime("%d%b-%H:%M")<CR>-bak.<C-R>=expand("%:e")<CR>
     \ \| 3sleep \| e #<CR>
 
 
@@ -88,9 +93,11 @@
   map <silent> <Leader>st :Startify<CR>
   nmap <Leader>r <Plug>RefreshColorScheme
   nmap <Leader>cm :EC<CR>:CT<CR>:MarkologyDisable<CR>:MarkologyEnable<CR>
-  map <silent> <Leader>n :NERDTreeToggle<CR>
+  map <silent> <Leader>n :NERDTreeFind<CR>
+  " map <silent> <Leader>n :NERDTreeToggle<CR>
   " map <silent> <Leader>n :NERDTreeToggle<CR> | setlocal statusline=%#Normal#<CR>
 
+  " FZF
   " leader f for side/bottom pane
   nnoremap <Leader>f :FZF<CR>
   nnoremap <Leader>\ :FZF<CR>
@@ -105,7 +112,7 @@
 
 
 "  archive gubbins
-  "  insert date stamp"
+  "  insert date stamp
   nmap <F3> i<C-R>=strftime("%H:%M %d %b")<CR><Esc>
 
   "  add date to end of line

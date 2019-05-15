@@ -5,12 +5,15 @@
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
   endif
 
+
+
   call plug#begin('~/.vim/plugged')
-    Plug 'chrisbra/changesPlugin'
-    " Plug 'digitaltoad/vim-pug'
+    " Plug 'chrisbra/changesPlugin'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'digitaltoad/vim-pug'
     Plug 'ervandew/supertab'
     Plug 'hail2u/vim-css3-syntax'
-    " Plug 'iloginow/vim-stylus'
+    Plug 'iloginow/vim-stylus'
     Plug 'itchyny/lightline.vim'
     Plug 'itchyny/vim-gitbranch'
     Plug 'jeetsukumaran/vim-markology'
@@ -26,10 +29,9 @@
     Plug 'pangloss/vim-javascript'
     Plug 'scrooloose/nerdtree'
     Plug 'simnalamburt/vim-mundo'
-    " Plug 'storyn26383/vim-vue'
+    Plug 'storyn26383/vim-vue'
     Plug 'tpope/vim-commentary'
     Plug 'vimwiki/vimwiki'
-    " Plug 'yegappan/mru'
     Plug 'yurifury/hexHighlight'
   call plug#end()
 
