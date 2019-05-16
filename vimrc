@@ -1,5 +1,7 @@
 " → init plug plugin
-  source $HOME/.vim/plug.vimrc
+   source $HOME/.vim/plug.vimrc
+  " source $HOME/.vim/packager_init.vimrc
+  " source $HOME/.vim/packager.vimrc
 
 
 "  general settings
