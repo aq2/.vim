@@ -102,9 +102,9 @@
   exe 'hi VimwikiHeader6 guifg='s:eggplant' gui=bold'
 
 " ch-ch-ch changes
-  exe 'hi ChangesSignTextCh guifg='s:dgray' guibg='s:darker
-  exe 'hi ChangesSignTextAdd guifg='s:dgray' guibg='s:darker
-  exe 'hi ChangesSignTextDel guifg='s:dgray' guibg='s:darker
+  " exe 'hi ChangesSignTextCh guifg='s:dgray' guibg='s:darker
+  " exe 'hi ChangesSignTextAdd guifg='s:dgray' guibg='s:darker
+  " exe 'hi ChangesSignTextDel guifg='s:dgray' guibg='s:darker
 
 
 "  markology
@@ -131,7 +131,7 @@
   exe 'hi htmlLink guifg='s:white' gui=underline'
   exe 'hi htmlSpecialTagName guifg='s:purple
 
-  " Markdown Highlighting 
+  " Markdown Highlighting
   exe 'hi mkdCode guifg='s:purple
 
 " nerd nerds r us

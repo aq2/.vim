@@ -3,8 +3,9 @@
 
   let NERDTreeMinimalUI=1
   let NERDTreeQuitOnOpen=1
-  let NERDTreeShowBookmarks=1
   let NERDTreeNaturalSort=1
+  let NERDTreeShowBookmarks=1
+  let NERDTreeMapQuit='<Esc>' 
   let NERDTreeRespectWildIgnore=1
   let NERDTreeBookmarksFile=expand("$HOME/.vim/local/NERDTreeBookmarks")
   " let NERDTreeChDirMode=1
@@ -44,4 +45,3 @@
   call NERDTreeHilite('md',  '#3366aa', 'NONE')
   call NERDTreeHilite('html', '#994499', 'NONE')
 
-  let NERDTreeMapQuit='<Esc>' 

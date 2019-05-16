@@ -92,7 +92,7 @@
   map <Leader>u  :MundoToggle<CR>
   map <silent> <Leader>st :Startify<CR>
   nmap <Leader>r <Plug>RefreshColorScheme
-  nmap <Leader>cm :EC<CR>:CT<CR>:MarkologyDisable<CR>:MarkologyEnable<CR>
+  " nmap <Leader>cm :EC<CR>:CT<CR>:MarkologyDisable<CR>:MarkologyEnable<CR>
   map <silent> <Leader>n :NERDTreeFind<CR>
   " map <silent> <Leader>n :NERDTreeToggle<CR>
   " map <silent> <Leader>n :NERDTreeToggle<CR> | setlocal statusline=%#Normal#<CR>

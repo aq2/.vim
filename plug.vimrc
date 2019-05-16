@@ -6,7 +6,6 @@
   endif
 
 
-
   call plug#begin('~/.vim/plugged')
     " Plug 'chrisbra/changesPlugin'
     Plug 'airblade/vim-gitgutter'
