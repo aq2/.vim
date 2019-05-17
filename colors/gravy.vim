@@ -25,7 +25,8 @@
   let s:white="#b59784"
   let s:brite="#c5aa9a"
 
-  let s:greenish='#1d2d10'
+  let s:greenish='#2d2d1e'
+  " let s:greenish='#1d2d10'
   let s:grayish='#392e27'
 
 
@@ -39,7 +40,7 @@
 " basic text
   exe 'hi Type guifg='s:plum
   exe 'hi Tag guifg='s:purple
-  exe 'hi Comment guifg='s:gray
+  exe 'hi Comment guifg='s:gray' gui=italic'
   exe 'hi PreProc guifg='s:plum
   exe 'hi Special guifg='s:gray
   exe 'hi Constant guifg='s:brown
@@ -86,9 +87,9 @@
   exe 'hi ErrorMsg guifg='s:darker' guibg='s:pink' gui=bold'
   exe 'hi Question guifg='s:orange' guibg='s:dark' gui=bold'
 
-"  diffy daffy duck
-  exe 'hi DiffAdd guibg='s:greenish' guifg='s:brite
-  exe 'hi DiffChange guibg='s:grayish' guifg='s:pink
+"  diffy daff
+  exe 'hi DiffAdd guibg='s:greenish
+  exe 'hi DiffChange guibg='s:grayish
   exe 'hi DiffText guifg='s:pink' guibg='s:purple' gui=bold'
   exe 'hi DiffDelete guifg='s:plum' guibg='s:darker' gui=none'
 
@@ -100,12 +101,6 @@
   exe 'hi VimwikiHeader4 guifg='s:plum' gui=bold'
   exe 'hi VimwikiHeader5 guifg='s:pink' gui=bold'
   exe 'hi VimwikiHeader6 guifg='s:eggplant' gui=bold'
-
-" ch-ch-ch changes
-  " exe 'hi ChangesSignTextCh guifg='s:dgray' guibg='s:darker
-  " exe 'hi ChangesSignTextAdd guifg='s:dgray' guibg='s:darker
-  " exe 'hi ChangesSignTextDel guifg='s:dgray' guibg='s:darker
-
 
 "  markology
   exe 'hi MarkologyHLl guifg='s:gray' guibg='s:darker
@@ -134,10 +129,10 @@
   " Markdown Highlighting
   exe 'hi mkdCode guifg='s:purple
 
-" nerd nerds r us
+" nerd
   exe  'hi NERDTreeDir guifg='s:purple
 
-" TrailerTrash nice
+" TrailerTrash
   exe 'hi UnwantedTrailerTrash guibg='s:grape
 
 "→→→ fzf ftw
@@ -157,4 +152,3 @@
     \ 'header':  ['fg', 'Comment']
   \ }
 
-  " add shite here

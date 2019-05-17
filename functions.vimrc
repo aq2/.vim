@@ -59,3 +59,21 @@
 
   nmap <leader>sp :call <SID>SynStack()<CR>
 
+" date stamp?
+  " update 'Last modified: ' on last line when saved
+  " 'Last modified: ' can have up to 10 chars before (handy for comment chars)
+  " Restores cursor and window position using save_cursor variable
+  function! LastModified()
+    let n = line("$")
+    let save_cursor = getpos(".")
+    keepjumps exe '1,' . n . 's#^\(.\{,10}Last modified: \).*#\1' .
+      \ strftime('%a %b %d, %Y  %H:%M') . '#e'
+    call histdel('search', -1)
+    call setpos('.', save_cursor)
+  endfunction
+
+  augroup WriteTimestamp()
+    autocmd!
+    autocmd BufWritePre *.md call LastModified()
+  augroup end
+

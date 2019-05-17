@@ -8,7 +8,6 @@
   " auto-accept first correction option
   nmap <Leader>z 1z=
 
-
 " --- edit/reload dotfiles ---
   nmap <leader>ez :e ~/.zshrc<CR>
   nmap <silent> <leader>ev :e ~/.vim/vimrc<CR>
@@ -53,22 +52,6 @@
   nnoremap ,p :put "<CR>
   nnoremap ,P :put! "<CR>
 
-" --- bubbles ---
-  " Bubble single lines
-  nmap <S-Up> ddkP
-  imap <S-Up> <ESC>ddkPi
-  nmap <S-Down> ddp
-  imap <S-Down> <ESC>ddpi
-
-  " Bubble multiple lines
-  vmap <S-Up> xkP`[V`]
-  vmap <S-Down> xp`[V`]
-  imap <S-Up> <ESC>xkP`[V`]i
-  imap <S-Down> <ESC>xp`[V`]
-
-  " using $ for end of line is dumb - use END for end of line
-  " or D for d$
-
   " \# does copy/paste/comment in norm and viz modes too 😃
   nmap <Leader>#  yypgcck
   xmap <silent> <leader># yjpgV<Plug>Commentary<CR>
@@ -82,6 +65,20 @@
     \ \| 3sleep \| e #<CR>
 
 
+" --- bubbles ---
+  " Bubble single lines
+  nmap <S-Up> ddkP
+  imap <S-Up> <ESC>ddkPi
+  nmap <S-Down> ddp
+  imap <S-Down> <ESC>ddpi
+
+  " Bubble multiple lines
+  vmap <S-Up> xkP`[V`]
+  vmap <S-Down> xp`[V`]
+  imap <S-Up> <ESC>xkP`[V`]i
+  imap <S-Down> <ESC>xp`[V`]
+
+
 " --- pluginz/leaderz ---
 
   ab wt :VimwikiTable
@@ -92,12 +89,10 @@
   map <Leader>u  :MundoToggle<CR>
   map <silent> <Leader>st :Startify<CR>
   nmap <Leader>r <Plug>RefreshColorScheme
-  " nmap <Leader>cm :EC<CR>:CT<CR>:MarkologyDisable<CR>:MarkologyEnable<CR>
   map <silent> <Leader>n :NERDTreeFind<CR>
-  " map <silent> <Leader>n :NERDTreeToggle<CR>
   " map <silent> <Leader>n :NERDTreeToggle<CR> | setlocal statusline=%#Normal#<CR>
 
-  " FZF
+" →→ FZF
   " leader f for side/bottom pane
   nnoremap <Leader>f :FZF<CR>
   nnoremap <Leader>\ :FZF<CR>
@@ -105,7 +100,7 @@
   nnoremap <Leader>p :FZF ~<CR>
   nnoremap <Leader>m :History<CR>
 
-" trailer trash sweetness
+"  trailer trash sweetness
   nnoremap <F12> :Trailer<CR>
   nnoremap <S-F12> :TrailerTrim<CR>
   vnoremap <S-F12> :TrailerTrim<CR>
@@ -113,11 +108,11 @@
 
 "  archive gubbins
   "  insert date stamp
-  nmap <F3> i<C-R>=strftime("%H:%M %d %b")<CR><Esc>
+  nmap <F3> i<C-R>=strftime("%d %b %H:%M")<CR><Esc>
 
   "  add date to end of line
-  nmap <F4> A  ( <Esc><F3>li)<Del><Esc>
+  nmap <F4> A → <Esc><F3>li<Del><Esc>
 
   " move underneath archive header
-  nmap <F7> zRdd /## archive<CR>p``
+  nmap <F7> zRdd /## archive<CR>:nohl<CR> p``
 

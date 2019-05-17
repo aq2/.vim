@@ -1,11 +1,10 @@
 " -- -- NERDTree settings
-" NERD
 
   let NERDTreeMinimalUI=1
   let NERDTreeQuitOnOpen=1
   let NERDTreeNaturalSort=1
   let NERDTreeShowBookmarks=1
-  let NERDTreeMapQuit='<Esc>' 
+  let NERDTreeMapQuit='<Esc>'
   let NERDTreeRespectWildIgnore=1
   let NERDTreeBookmarksFile=expand("$HOME/.vim/local/NERDTreeBookmarks")
   " let NERDTreeChDirMode=1
@@ -22,20 +21,21 @@
 
   augroup NERDTree
     autocmd!
-    autocmd FileType tagbar,nerdtree setlocal signcolumn=no
+    " autocmd FileType tagbar,nerdtree setlocal signcolumn=no
     autocmd User NERDTreeInit call s:attempt_select_last_file()
     " remove slashes from NERDTree
     autocmd FileType nerdtree setlocal conceallevel=3
       \ | syntax match NERDTreeDirSlash #/$# containedin=NERDTreeDir conceal contained
+    " autocmd FileType nerdtree setlocal map <silent> <Leader>n :NERDTreeToggle<CR>
+    " autocmd FileType tagbar,nerdtree setlocal statusline=%#Normal#
   augroup end
 
-  " autocmd FileType tagbar,nerdtree setlocal statusline=%#Normal#
 
 
 " -- File highlighting
   function! NERDTreeHilite(extension,  guifg, guibg)
-    exec 'autocmd FileType nerdtree highlight ' . a:extension .' guibg='. a:guibg .' guifg='. a:guifg
     exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+    exec 'autocmd FileType nerdtree highlight ' . a:extension .' guibg='. a:guibg .' guifg='. a:guifg
   endfunction
 
   call NERDTreeHilite('css', 'cyan', 'NONE')

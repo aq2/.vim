@@ -28,6 +28,8 @@
     autocmd!
     autocmd User StartifyReady setlocal cursorline
     autocmd User StartifyReady set laststatus=0 noruler
+    autocmd User StartifyReady map <silent> <Leader>n :NERDTreeToggle<CR>
+
     " autocmd User StartifyBufferOpened setlocal signcolumn=no
     autocmd User StartifyBufferOpened set laststatus=2
   augroup end

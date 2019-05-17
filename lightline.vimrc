@@ -15,14 +15,33 @@
 
   " can we change left?
   " rtfm and do the tutorial!
+  " when space gets short, abbreviate MODE and remove percentage/line info
+  " put git at end? show proper branch name, symbol when space is short?
 
   let g:lightline#bufferline#modified  = ' 😱'
   let g:lightline#bufferline#read_only  = ' '
+  let g:lightline#bufferline#filename_modifier = ':~:.'
   let g:lightline.component_type   = {'buffers': 'tabsel'}
   let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
   let g:lightline.tabline          = {'left': [['buffers']], 'right': [['close']]}
 
+  " change so only takes place when not enough room?
+  let g:lightline.mode_map = {
+		    \ 'n' : 'NOR',
+		    \ 'i' : 'INS',
+		    \ 'R' : 'REP',
+		    \ 'v' : 'VIS',
+		    \ 'V' : 'VLN',
+		    \ "\<C-v>": 'VBK',
+		    \ 'c' : 'COM',
+		    \ 's' : 'SEL',
+		    \ 'S' : 'SLN',
+		    \ "\<C-s>": 'SBK',
+		    \ 't': 'TER',
+  \ }
 
+
+" fancy function!s
   function! GitAQ()
     if gitbranch#name() == ''
       return ''
@@ -45,15 +64,11 @@
     au BufWritePost,TextChanged,TextChangedI * call LightlineUpdateAQ()
   augroup end
 
-
+" buffer mappings - do i need so many??
   nmap <Leader>1 <Plug>lightline#bufferline#go(1)
   nmap <Leader>2 <Plug>lightline#bufferline#go(2)
   nmap <Leader>3 <Plug>lightline#bufferline#go(3)
   nmap <Leader>4 <Plug>lightline#bufferline#go(4)
   nmap <Leader>5 <Plug>lightline#bufferline#go(5)
   nmap <Leader>6 <Plug>lightline#bufferline#go(6)
-  nmap <Leader>7 <Plug>lightline#bufferline#go(7)
-  nmap <Leader>8 <Plug>lightline#bufferline#go(8)
-  nmap <Leader>9 <Plug>lightline#bufferline#go(9)
-  nmap <Leader>0 <Plug>lightline#bufferline#go(10)
 
