@@ -75,7 +75,8 @@
   exe 'hi Pmenu guifg='s:white' guibg='s:grayish
 
   exe 'hi WildMenu guifg='s:white' guibg='s:dgray' gui=bold'
-  exe 'hi StatusLine guifg='s:white' guibg='s:grayish' gui=none'
+  exe 'hi StatusLine guifg='s:white' guibg='s:grayish' gui=italic'
+  exe 'hi StatusLineNC guifg='s:plum' guibg='s:brown' gui=none'
 
   exe 'hi Directory guifg='s:brown
   exe 'hi MatchParen guifg='s:darker' guibg='s:dgray

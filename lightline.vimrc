@@ -1,63 +1,46 @@
-  source ~/.vim/colors/gravyLine.vim
+source ~/.vim/colors/gravyLine.vim
 
-  let g:lightline = {
-      \ 'colorscheme': 'gravyLine',
-      \ 'active': {
-      \   'left': [['mode'], ['gitAQ'], ['buffers']] ,
-      \   'right': [['percent', 'lineinfo'], ['filetype']]
-      \ },
-      \ 'inactive': {
-      \  'right': []
-      \  },
-      \ 'subseparator': { 'left': '', 'right': '' },
-      \ 'component_function': {
-      \   'gitAQ': 'GitAQ',
-      \   'filetype': 'LightlineFiletype',
-      \   'percent': 'MyLightLinePercent',
-      \   'lineinfo': 'MyLightLineLineInfo',
-      \   'mode': 'LightlineMode',
-      \ },
-  \ }
+let g:lightline = {
+  \ 'colorscheme': 'gravyLine',
+  \ 'active': {
+  \   'left': [['mode'], ['aqGit'], ['bufferline']],
+  \   'right': [['percent', 'lineinfo'], ['filetype']],
+  \ },
+  \ 'inactive': { 'right': [], },
+  \ 'subseparator': { 'left': '', 'right': '' },
+  \ 'component_function': {
+  \   'aqGit': 'AQGit',
+  \   'mode': 'LightlineMode',
+  \   'bufferline': 'MyBufferLine',
+  \   'percent': 'MyLightLinePercent',
+  \   'filetype': 'LightlineFiletype',
+  \   'lineinfo': 'MyLightLineLineInfo',
+  \ },
+\ }
 
-  " can we change left?
-  " rtfm and do the tutorial!
-  " when space gets short, abbreviate MODE and remove percentage/line info
-  " put git at end? show proper branch name, symbol when space is short?
+let g:bufferline_echo = 0
+let g:bufferline_fname_mod = ':~:.'
+ let g:bufferline_modified = ' 😱'
+  let g:bufferline_show_bufnr = 0
+ let g:bufferline_pathshorten = 1
+ 
+ 
+ " let g:bufferline_fname_mod = ':t'
+ let g:bufferline_inactive_highlight = 'StatusLineNC'
+ let g:bufferline_active_highlight = 'StatusLine'
 
-  let g:lightline#bufferline#modified  = ' 😱'
-  let g:lightline#bufferline#read_only  = ' '
-  let g:lightline#bufferline#filename_modifier = ':~:.'
-  let g:lightline.component_type   = {'buffers': 'tabsel'}
-  let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
-  let g:lightline.tabline          = {'left': [['buffers']], 'right': [['close']]}
+ let g:bufferline_solo_highlight = 1
+ let g:bufferline_excludes = [] "see source for defaults
 
-  " change so only takes place when not enough room?
-  let g:lightline.mode_map = {
-		    \ 'n' : 'NORM',
-		    \ 'i' : 'INS ',
-		    \ 'R' : 'REPL',
-		    \ 'v' : 'VIS ',
-		    \ 'V' : 'VLIN',
-		    \ "\<C-v>": 'VBLK',
-		    \ 'c' : 'COMM',
-		    \ 's' : 'SEL ',
-		    \ 'S' : 'SLIN',
-		    \ "\<C-s>": 'SBLK',
-		    \ 't': 'TERM',
-  \ }
+
+autocmd VimEnter *
+    \ let &statusline='%{bufferline#refresh_status()}'
+\ .bufferline#get_status_string()
+
+
 
 
 " fancy function!s
-  function! GitAQ()
-    if gitbranch#name() == ''
-      return ''
-    elseif gitbranch#name() == 'master'
-      return ''
-    else
-      return ''
-    endif
-  endfunction
-
 
   function! LightlineUpdateAQ()
     if g:goyo==0
@@ -90,7 +73,6 @@ function! MyLightLineLineInfo()
   endif
 endfunction
 
-
 	function! LightlineMode()
 	  let fname = expand('%:t')
 	  return fname == '__Gundo__' ? 'Gundo' :
@@ -99,12 +81,21 @@ endfunction
 	        \ winwidth(0) > 60 ? lightline#mode() : ''
 	endfunction
 
+ function! AQGit()
+    if gitbranch#name() == ''
+      return ''
+    elseif gitbranch#name() == 'master'
+      return ''
+    else
+      return ''
+    endif
+  endfunction
 
-" buffer mappings - do i need so many??
-  nmap <Leader>1 <Plug>lightline#bufferline#go(1)
-  nmap <Leader>2 <Plug>lightline#bufferline#go(2)
-  nmap <Leader>3 <Plug>lightline#bufferline#go(3)
-  nmap <Leader>4 <Plug>lightline#bufferline#go(4)
-  nmap <Leader>5 <Plug>lightline#bufferline#go(5)
-  nmap <Leader>6 <Plug>lightline#bufferline#go(6)
-
+function! MyBufferLine()
+  if &ft !=? 'nerdtree'
+    let st=g:bufferline#refresh_status()
+    return g:bufferline_status_info.before . g:bufferline_status_info.current . g:bufferline_status_info.after
+  else
+    return 'tits'
+  endif
+endfunction

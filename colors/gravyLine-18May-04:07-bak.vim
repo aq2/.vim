@@ -15,7 +15,7 @@ let s:orange = [ '#c8764a', 40 ]
 let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
 
 "                      MODE   fg      bg        git  fg      bg        unselected
-let s:p.normal.left =  [ [ s:white, s:purple ], [ s:gray, s:purple ] ]
+let s:p.normal.left =  [ [ s:white, s:purple ], [ s:gray, s:purple ], [s:gray, s:black] ]
 let s:p.insert.left =  [ [ s:black, s:orange ], [ s:gray, s:purple ], [s:gray, s:black] ]
 let s:p.visual.left =  [ [ s:black, s:orange ], [ s:gray, s:purple ], [s:gray, s:black] ]
 let s:p.replace.left = [ [ s:black, s:orange ], [ s:gray, s:purple ], [s:gray, s:black] ]
@@ -30,7 +30,7 @@ let s:p.visual.right = [ [ s:purple, s:orange ] ]
 let s:p.replace.right = [ [ s:purple, s:orange ] ]
 
 "                        SEL   fg       bg
-let s:p.tabline.tabsel = [ [ s:white, s:orange ] ]
+let s:p.tabline.tabsel = [ [ s:white, s:dgray ] ]
 
 "  only for tabline
 let s:p.tabline.left = [ [ s:white, s:black ] ]
