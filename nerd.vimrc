@@ -1,35 +1,26 @@
 " -- -- NERDTree settings
 
-  let NERDTreeMinimalUI=1
-  let NERDTreeQuitOnOpen=1
-  let NERDTreeNaturalSort=1
-  let NERDTreeShowBookmarks=1
-  let NERDTreeMapQuit='<Esc>'
-  let NERDTreeRespectWildIgnore=1
-  let NERDTreeBookmarksFile=expand("$HOME/.vim/local/NERDTreeBookmarks")
+  let NERDTreeMinimalUI = 1
+  let NERDTreeQuitOnOpen = 1
+  let NERDTreeNaturalSort = 1
+  let NERDTreeHijackNetrw = 0
+  let NERDTreeMapQuit = '<Esc>'
+  let NERDTreeShowBookmarks = 1
+  let NERDTreeRespectWildIgnore = 1
+  let NERDTreeBookmarksFile = expand("$HOME/.vim/local/NERDTreeBookmarks")
   " let NERDTreeChDirMode=1
   " let NERDTreeStatusLine=-1
   " let g:NERDTreeStatusline="%{matchstr(getline('.'), '\\s\\zs\\w\\(.*\\)')}"
 
-  " . . .  dunno if worx?
-  function! s:attempt_select_last_file()
-    let l:previous=expand('#:t')
-    if l:previous != ''
-      call search('\v<' . l:previous . '>')
-    endif
-  endfunction
 
+  " remove slashes from NERDTree
   augroup NERDTree
     autocmd!
-    " autocmd FileType tagbar,nerdtree setlocal signcolumn=no
-    autocmd User NERDTreeInit call s:attempt_select_last_file()
-    " remove slashes from NERDTree
     autocmd FileType nerdtree setlocal conceallevel=3
       \ | syntax match NERDTreeDirSlash #/$# containedin=NERDTreeDir conceal contained
-    " autocmd FileType nerdtree setlocal map <silent> <Leader>n :NERDTreeToggle<CR>
-    " autocmd FileType tagbar,nerdtree setlocal statusline=%#Normal#
-  augroup end
-
+    " autocmd FileType nerdtree setlocal map <silent> <Leader><Space> :NERDTreeToggle<CR>
+    autocmd FileType nerdtree setlocal statusline='NOIA'
+ augroup end
 
 
 " -- File highlighting
@@ -38,10 +29,10 @@
     exec 'autocmd FileType nerdtree highlight ' . a:extension .' guibg='. a:guibg .' guifg='. a:guifg
   endfunction
 
+  call NERDTreeHilite('md',  '#974286', 'NONE')
   call NERDTreeHilite('css', 'cyan', 'NONE')
   call NERDTreeHilite('vue', 'green', 'NONE')
   call NERDTreeHilite('styl', 'cyan', 'NONE')
-  call NERDTreeHilite('ini', '#771199', 'NONE')
-  call NERDTreeHilite('md',  '#3366aa', 'NONE')
   call NERDTreeHilite('html', '#994499', 'NONE')
+  call NERDTreeHilite('vimrc',  '#779911', 'NONE')
 

@@ -2,21 +2,15 @@
 
   let g:lightline = {
       \ 'colorscheme': 'gravyLine',
+      \ 'component_function': {
+      \   'gitAQ': 'GitAQ'
+      \ },
       \ 'active': {
       \   'left': [['mode'], ['gitAQ'], ['buffers']] ,
-      \   'right': [['percent', 'lineinfo'], ['filetype']]
+      \   'right': [['percent', 'lineinfo']]
       \ },
-      \ 'inactive': {
-      \  'right': []
-      \  },
       \ 'subseparator': { 'left': '', 'right': '' },
-      \ 'component_function': {
-      \   'gitAQ': 'GitAQ',
-      \   'filetype': 'LightlineFiletype',
-      \   'percent': 'MyLightLinePercent',
-      \   'lineinfo': 'MyLightLineLineInfo',
-      \   'mode': 'LightlineMode',
-      \ },
+      \ 'inactive': {},
   \ }
 
   " can we change left?
@@ -69,36 +63,6 @@
     autocmd!
     au BufWritePost,TextChanged,TextChangedI * call LightlineUpdateAQ()
   augroup end
-
-function! LightlineFiletype()
-	  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
-	endfunction
-
-function! MyLightLinePercent()
-  if &ft !=? 'nerdtree'
-    return line('.') * 100 / line('$') . '%'
-  else
-    return ''
-  endif
-endfunction
-
-function! MyLightLineLineInfo()
-  if &ft !=? 'nerdtree'
-    return line('.').':'. col('.')
-  else
-    return ''
-  endif
-endfunction
-
-
-	function! LightlineMode()
-	  let fname = expand('%:t')
-	  return fname == '__Gundo__' ? 'Gundo' :
-	        \ fname == '__Gundo_Preview__' ? 'Gundo Preview' :
-	        \ fname =~ 'NERD_tree' ? 'NERDTree' :
-	        \ winwidth(0) > 60 ? lightline#mode() : ''
-	endfunction
-
 
 " buffer mappings - do i need so many??
   nmap <Leader>1 <Plug>lightline#bufferline#go(1)

@@ -4,7 +4,7 @@
   let g:vimwiki_hl_cb_checked = 1
   " let g:vimwiki_listsyms = ' '
   let g:vimwiki_listsyms = ' ∙ﱤﱣ✓'
-  
+
   let wiki_1 = {}
   let wiki_1.ext = '.md'
   let wiki_1.list_margin = 0
@@ -28,7 +28,7 @@
     autocmd!
     autocmd User StartifyReady setlocal cursorline
     autocmd User StartifyReady set laststatus=0 noruler
-    autocmd User StartifyReady map <silent> <Leader>n :NERDTreeToggle<CR>
+    autocmd User StartifyReady map <silent> <buffer> <Leader><Space> :NERDTreeToggle<CR>
 
     " autocmd User StartifyBufferOpened setlocal signcolumn=no
     autocmd User StartifyBufferOpened set laststatus=2

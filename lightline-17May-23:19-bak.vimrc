@@ -16,6 +16,7 @@
       \   'percent': 'MyLightLinePercent',
       \   'lineinfo': 'MyLightLineLineInfo',
       \   'mode': 'LightlineMode',
+      \   'buffers': 'BuffersAQ'
       \ },
   \ }
 
@@ -73,6 +74,12 @@
 function! LightlineFiletype()
 	  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
 	endfunction
+
+function! BuffersAQ()
+	  return winwidth(0) > 70 ? ('buffers') : ''
+	endfunction
+
+
 
 function! MyLightLinePercent()
   if &ft !=? 'nerdtree'

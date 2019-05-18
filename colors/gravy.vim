@@ -78,7 +78,8 @@
   exe 'hi StatusLine guifg='s:white' guibg='s:grayish' gui=none'
 
   exe 'hi Directory guifg='s:brown
-  exe 'hi MatchParen guifg='s:darker' guibg='s:gray
+  exe 'hi MatchParen guifg='s:darker' guibg='s:dgray
+
 
 " messages
   exe 'hi MoreMsg guifg='s:orange

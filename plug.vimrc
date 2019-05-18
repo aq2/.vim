@@ -9,6 +9,7 @@
   call plug#begin('~/.vim/plugged')
     " Plug 'chrisbra/changesPlugin'
     Plug 'airblade/vim-gitgutter'
+    Plug 'bling/vim-bufferline'
     Plug 'digitaltoad/vim-pug'
     Plug 'ervandew/supertab'
     Plug 'hail2u/vim-css3-syntax'
