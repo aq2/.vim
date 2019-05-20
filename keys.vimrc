@@ -57,7 +57,8 @@
   xmap <silent> <leader># yjpgV<Plug>Commentary<CR>
 
   nnoremap <silent> <Leader>q :bd<CR>
-  map <silent> <leader>cd :cd %:p:h<cr>:pwd<cr>
+  nnoremap :cd :cd %:p:h<cr>:pwd<CR>
+  " map <silent> :cd <leader>cd
 
   " quick backup file - use saveas! to replace original buffer
   map <silent> <Leader>b :up \| write!
@@ -90,7 +91,7 @@
   nmap <silent> <Leader>r <Plug>RefreshColorScheme
   map <silent> <Leader>n :NERDTreeFind<CR>
   nmap <silent> <Leader><Space> :NERDTreeFind<CR>
-  " map <silent> <Leader>n :NERDTreeToggle<CR> | setlocal statusline=%#Normal#<CR>
+  map <silent> - :NERDTreeFind<CR>
 
 " →→ FZF
   " leader f for side/bottom pane

@@ -21,7 +21,7 @@
 "... make folds a wee bit more interesting
   function! MyFoldText()
     let foldsize = (v:foldend-v:foldstart)
-    return '▾'.getline(v:foldstart).'   ('.foldsize.' lines)    ▾ '
+    return '▾'.getline(v:foldstart).'   ('.foldsize.' lines)  ▾ '
   endfunction
 
   set foldtext=MyFoldText()

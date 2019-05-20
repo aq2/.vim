@@ -2,6 +2,7 @@
   let g:vimwiki_folding='expr'
   let g:vimwiki_auto_header = 1
   let g:vimwiki_hl_cb_checked = 1
+  " let g:vimwiki_listsyms = ' '
   let g:vimwiki_listsyms = ' ∙ﱤﱣ✓'
 
   let wiki_1 = {}
@@ -29,7 +30,8 @@
 
   augroup Startify
     autocmd!
-    autocmd User Startified setlocal laststatus=0 cursorline noruler
+    autocmd User Startified setlocal laststatus=0
+    autocmd User StartifyReady setlocal cursorline noruler
     autocmd User StartifyBufferOpened set laststatus=2
     autocmd FileType startify map <buffer> - :NERDTreeToggle<CR>
     autocmd FileType startify map <buffer> <Leader>n :NERDTreeToggle<CR>
@@ -89,4 +91,7 @@
     autocmd  FileType fzf set laststatus=0 noshowmode noruler
       \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
   augroup end
+
+
+
 

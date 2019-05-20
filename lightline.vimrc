@@ -11,7 +11,7 @@
     \  'inactive': {
     \    'right': [],
     \  },
-    \  'subseparator': { 'left': '', 'right': '' },
+    \  'subseparator': { 'left': ' ', 'right': '' },
     \  'component_function': {
     \    'mode': 'MyMode',
     \    'gitBranch': 'MyGit',
@@ -21,8 +21,7 @@
   \ }
     " \  'separator': { 'left': '' , 'right': '' },
 
-  
-  " ﯁﯀﮿﮾ﰬﰭﰵﰶﰷﱤﱥﱣﱦﱪﱫﲉﲎﲏﲤ
+
   let g:lightline#bufferline#modified  = ' 😱'
   let g:lightline#bufferline#read_only  = ' '
   let g:lightline#bufferline#filename_modifier = ':~:.'

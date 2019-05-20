@@ -3,7 +3,7 @@
   let NERDTreeMinimalUI = 1
   let NERDTreeQuitOnOpen = 1
   let NERDTreeNaturalSort = 1
-  let NERDTreeHijackNetrw = 0
+  let NERDTreeHijackNetrw = 1
   let NERDTreeMapQuit = '<Esc>'
   let NERDTreeShowBookmarks = 1
   let NERDTreeRespectWildIgnore = 1
@@ -11,6 +11,9 @@
   " let NERDTreeChDirMode=1
   " let NERDTreeStatusLine=-1
   " let g:NERDTreeStatusline="%{matchstr(getline('.'), '\\s\\zs\\w\\(.*\\)')}"
+
+  let NERDTreeMapOpenInTab='\t'
+let NERDTreeMapUpdir='-'
 
 
   " remove slashes from NERDTree

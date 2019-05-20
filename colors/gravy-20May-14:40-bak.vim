@@ -13,7 +13,6 @@
   let s:grape='#772266'
   let s:eggplant='#974286'
   let s:purple="#7f749d"
-  let s:dpurple="#2b2b2b"
   let s:plum="#b76690"
   let s:brown= "#b09676"
   let s:orange="#c8764a"
@@ -25,7 +24,6 @@
   let s:gray="#968477"
   let s:white="#b59784"
   let s:brite="#c5aa9a"
-  let s:ldark="#373632"
 
   let s:greenish='#2d2d1e'
   " let s:greenish='#1d2d10'
@@ -77,8 +75,8 @@
   exe 'hi Pmenu guifg='s:white' guibg='s:grayish
 
   exe 'hi WildMenu guifg='s:white' guibg='s:dgray' gui=bold'
-  exe 'hi StatusLine guifg='s:orange' guibg='s:ldark' gui=italic'
-  exe 'hi StatusLineNC guifg='s:plum' guibg='s:dpurple' gui=none'
+  exe 'hi StatusLine guifg='s:white' guibg='s:grayish' gui=italic'
+  exe 'hi StatusLineNC guifg='s:plum' guibg='s:brown' gui=none'
 
   exe 'hi Directory guifg='s:brown
   exe 'hi MatchParen guifg='s:darker' guibg='s:dgray

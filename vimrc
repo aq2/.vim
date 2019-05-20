@@ -1,5 +1,5 @@
 " → init plug plugin
-   source $HOME/.vim/plug.vimrc
+  source $HOME/.vim/plug.vimrc
 
 "  general settings
   syntax on
@@ -10,8 +10,8 @@
   set virtualedit=block
   set ttyfast termguicolors
   set splitbelow splitright
+  set laststatus=2 showcmd
   set rnu number numberwidth=4
-  set laststatus=2 showcmd noshowmode
   set cursorline scrolloff=9 nostartofline
 
   set backspace=2
@@ -37,6 +37,7 @@
   set completeopt=longest,menuone
   set ignorecase hlsearch incsearch
   set omnifunc=syntaxcomplete#Complete
+  set sps=best,10 " only show 10 best spell alternatives
   set wildmenu wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pdf,*/Music/*,*/Pictures/*
 
   set nobackup
@@ -44,9 +45,6 @@
   " set backup backupdir=~/.vim/local/backup//
   set directory=~/.vim/local/swap// directory+=.
   set undofile undodir=~/.vim/local/undo undodir+=.
-
-  " only show 10 best spell alternatives
-  set sps=best,10
 
 
 "  gvim settings
@@ -64,6 +62,7 @@
   let g:netrw_winsize = 25
   let g:netrw_liststyle = 3
   let g:netrw_dirhistmax = 0
+  let loaded_netrwPlugin = 1     " actually disables it, believe it or not
 
 
 "  source other vim settings
@@ -72,4 +71,6 @@
   source /home/angelo/.vim/lightline.vimrc
   source /home/angelo/.vim/functions.vimrc
   source /home/angelo/.vim/plugin-settings.vimrc
+
+  set noshowmode
 
