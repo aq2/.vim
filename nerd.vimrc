@@ -19,7 +19,7 @@
     autocmd FileType nerdtree setlocal conceallevel=3
       \ | syntax match NERDTreeDirSlash #/$# containedin=NERDTreeDir conceal contained
     " autocmd FileType nerdtree setlocal map <silent> <Leader><Space> :NERDTreeToggle<CR>
-    autocmd FileType nerdtree setlocal statusline='NOIA'
+    autocmd FileType nerdtree  map <buffer> <silent> <Leader>n :NERDTreeToggle<CR>
  augroup end
 
 

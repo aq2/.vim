@@ -26,9 +26,13 @@
 
   augroup Startify
     autocmd!
-    autocmd User StartifyReady setlocal cursorline
-    autocmd User StartifyReady set laststatus=0 noruler
-    autocmd User StartifyReady map <silent> <buffer> <Leader><Space> :NERDTreeToggle<CR>
+    autocmd User Startified setlocal laststatus=0
+    autocmd User StartifyReady setlocal cursorline noruler
+    autocmd User StartifyBufferOpened set laststatus=2
+    autocmd FileType startify map <buffer> <Leader>n :NERDTreeToggle<CR>
+    " autocmd User StartifyReady setlocal cursorline
+    " autocmd User StartifyReady set laststatus=0 noruler
+    " autocmd User StartifyReady map <silent> <buffer> <Leader><Space> :NERDTreeToggle<CR>
 
     " autocmd User StartifyBufferOpened setlocal signcolumn=no
     autocmd User StartifyBufferOpened set laststatus=2

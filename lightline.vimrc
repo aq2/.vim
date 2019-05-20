@@ -1,101 +1,73 @@
-source ~/.vim/colors/gravyLine.vim
+"  custom lightline settings
 
-let g:lightline = {
-  \ 'colorscheme': 'gravyLine',
-  \ 'active': {
-  \   'left': [['mode'], ['aqGit'], ['bufferline']],
-  \   'right': [['percent', 'lineinfo'], ['filetype']],
-  \ },
-  \ 'inactive': { 'right': [], },
-  \ 'subseparator': { 'left': '', 'right': '' },
-  \ 'component_function': {
-  \   'aqGit': 'AQGit',
-  \   'mode': 'LightlineMode',
-  \   'bufferline': 'MyBufferLine',
-  \   'percent': 'MyLightLinePercent',
-  \   'filetype': 'LightlineFiletype',
-  \   'lineinfo': 'MyLightLineLineInfo',
-  \ },
-\ }
+  source ~/.config/nvim/colors/gravyLine.vim
 
-let g:bufferline_echo = 0
-let g:bufferline_fname_mod = ':~:.'
- let g:bufferline_modified = ' 😱'
-  let g:bufferline_show_bufnr = 0
- let g:bufferline_pathshorten = 1
- 
- 
- " let g:bufferline_fname_mod = ':t'
- let g:bufferline_inactive_highlight = 'StatusLineNC'
- let g:bufferline_active_highlight = 'StatusLine'
+  let g:lightline = {
+    \  'colorscheme': 'gravyLine',
+    \  'active': {
+    \    'left': [['mode'], ['buffers']] ,
+    \    'right': [['percent'], ['lineinfo'], ['gitBranch']]
+    \  },
+    \  'inactive': {
+    \    'right': [],
+    \  },
+    \  'subseparator': { 'left': '', 'right': '' },
+    \  'component_function': {
+    \    'mode': 'MyMode',
+    \    'gitBranch': 'MyGit',
+    \    'percent': 'MyPercent',
+    \    'lineinfo': 'MyLineInfo',
+    \  },
+  \ }
+    " \  'separator': { 'left': '' , 'right': '' },
 
- let g:bufferline_solo_highlight = 1
- let g:bufferline_excludes = [] "see source for defaults
+  
+  " ﯁﯀﮿﮾ﰬﰭﰵﰶﰷﱤﱥﱣﱦﱪﱫﲉﲎﲏﲤ
+  let g:lightline#bufferline#modified  = ' 😱'
+  let g:lightline#bufferline#read_only  = ' '
+  let g:lightline#bufferline#filename_modifier = ':~:.'
+  let g:lightline.component_type   = {'buffers': 'tabsel'}
+  let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
+  let g:lightline.tabline          = {'left': [['buffers']], 'right': [['close']]}
 
+	function! MyMode()
+	  if winwidth(0) < 46
+	    setlocal statusline=\
+	    return
+	  endif
+	   return lightline#mode()
+	endfunction
 
-autocmd VimEnter *
-    \ let &statusline='%{bufferline#refresh_status()}'
-\ .bufferline#get_status_string()
+  function! MyGit()
+    return winwidth(0) > 70 ? gitbranch#name() : ''
+  endfunction!
 
+  function! MyPercent()
+    return  winwidth(0) > 70 ? line('.') * 100 / line('$') . '%' : ''
+  endfunction
 
+  function! MyLineInfo()
+    return  winwidth(0) > 70 ? line('.').':'. col('.') : ''
+  endfunction
 
-
-" fancy function!s
-
-  function! LightlineUpdateAQ()
+  function! MyLightlineUpdate()
     if g:goyo==0
+      set laststatus=2
       call lightline#update()
     endif
   endfunction
 
   augroup UpdateLightline
     autocmd!
-    au BufWritePost,TextChanged,TextChangedI * call LightlineUpdateAQ()
+    au BufWritePost,TextChanged,TextChangedI * call MyLightlineUpdate()
   augroup end
 
-function! LightlineFiletype()
-	  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
-	endfunction
 
-function! MyLightLinePercent()
-  if &ft !=? 'nerdtree'
-    return line('.') * 100 / line('$') . '%'
-  else
-    return ''
-  endif
-endfunction
+" buffer mappings
+  nmap <Leader>1 <Plug>lightline#bufferline#go(1)
+  nmap <Leader>2 <Plug>lightline#bufferline#go(2)
+  nmap <Leader>3 <Plug>lightline#bufferline#go(3)
+  nmap <Leader>4 <Plug>lightline#bufferline#go(4)
+  nmap <Leader>5 <Plug>lightline#bufferline#go(5)
+  nmap <Leader>6 <Plug>lightline#bufferline#go(6)
 
-function! MyLightLineLineInfo()
-  if &ft !=? 'nerdtree'
-    return line('.').':'. col('.')
-  else
-    return ''
-  endif
-endfunction
-
-	function! LightlineMode()
-	  let fname = expand('%:t')
-	  return fname == '__Gundo__' ? 'Gundo' :
-	        \ fname == '__Gundo_Preview__' ? 'Gundo Preview' :
-	        \ fname =~ 'NERD_tree' ? 'NERDTree' :
-	        \ winwidth(0) > 60 ? lightline#mode() : ''
-	endfunction
-
- function! AQGit()
-    if gitbranch#name() == ''
-      return ''
-    elseif gitbranch#name() == 'master'
-      return ''
-    else
-      return ''
-    endif
-  endfunction
-
-function! MyBufferLine()
-  if &ft !=? 'nerdtree'
-    let st=g:bufferline#refresh_status()
-    return g:bufferline_status_info.before . g:bufferline_status_info.current . g:bufferline_status_info.after
-  else
-    return 'tits'
-  endif
-endfunction
