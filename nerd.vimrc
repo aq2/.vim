@@ -1,28 +1,30 @@
 " -- -- NERDTree settings
 
+  let NERDTreeChDirMode = 0
   let NERDTreeMinimalUI = 1
+  let NERDTreeMapUpdir = '-'
   let NERDTreeQuitOnOpen = 1
   let NERDTreeNaturalSort = 1
   let NERDTreeHijackNetrw = 1
   let NERDTreeMapQuit = '<Esc>'
+  let NERDTreeMapOpenInTab = '\t'
   let NERDTreeShowBookmarks = 1
   let NERDTreeRespectWildIgnore = 1
   let NERDTreeBookmarksFile = expand("$HOME/.vim/local/NERDTreeBookmarks")
-  " let NERDTreeChDirMode=1
-  " let NERDTreeStatusLine=-1
-  " let g:NERDTreeStatusline="%{matchstr(getline('.'), '\\s\\zs\\w\\(.*\\)')}"
-
-  let NERDTreeMapOpenInTab='\t'
-let NERDTreeMapUpdir='-'
 
 
-  " remove slashes from NERDTree
   augroup NERDTree
     autocmd!
+    " remove slashes from NERDTree
     autocmd FileType nerdtree setlocal conceallevel=3
       \ | syntax match NERDTreeDirSlash #/$# containedin=NERDTreeDir conceal contained
-    " autocmd FileType nerdtree setlocal map <silent> <Leader><Space> :NERDTreeToggle<CR>
     autocmd FileType nerdtree  map <buffer> <silent> <Leader>n :NERDTreeToggle<CR>
+
+    " close vim if only buffer is nerd
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+    " dont open file in nerd window
+  autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" | b# | endif
  augroup end
 
 
@@ -38,4 +40,6 @@ let NERDTreeMapUpdir='-'
   call NERDTreeHilite('styl', 'cyan', 'NONE')
   call NERDTreeHilite('html', '#994499', 'NONE')
   call NERDTreeHilite('vimrc',  '#779911', 'NONE')
+
+
 

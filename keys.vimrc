@@ -1,13 +1,5 @@
 " --- vim keyboard mapping ---
 
-  map <Leader>ee :setlocal statusline=%#Normal#<CR>
-
-
-"   magic spells
-  map <silent> <F5> :setlocal spell! spelllang=en_gb<CR>
-  " auto-accept first correction option
-  nmap <silent> <Leader>z 1z=
-
 " --- edit/reload dotfiles ---
   nmap <silent> <leader>ez :e ~/.zshrc<CR>
   nmap <silent> <leader>ev :e ~/.vim/vimrc<CR>
@@ -29,12 +21,17 @@
   " lazy man's colon
   nnoremap ; :
 
+  " stick help in virt split
+  " cnoremap help vert help<CR>
+  cabbrev h vert h
+
   " quick entry/exit into insert mode
   " nnoremap <Space> li
   " nnoremap <Del> i<Del>
 
   " .... old habits die hard
   nnoremap <silent> <C-s> :w<CR>
+  nnoremap <silent> <C-S> :wa<CR>
 
   " highlight last inserted text
   nnoremap gV `[v`]
@@ -44,8 +41,6 @@
 
   cmap <silent> waq wqa<CR>
 
-  nnoremap <silent> <Leader>hl :nohl<CR>
-  " map h, to override changes plugin
   nnoremap <silent> <Leader>h :nohl<CR>
 
   " smarter paste on line above/below, rather than cursor position
@@ -53,17 +48,15 @@
   nnoremap ,P :put! "<CR>
 
   " \# does copy/paste/comment in norm and viz modes too 😃
-  nmap <silent> <Leader>#  yypgcck
+  nmap <silent> <Leader># yypgcck
   xmap <silent> <leader># yjpgV<Plug>Commentary<CR>
 
   nnoremap <silent> <Leader>q :bd<CR>
   nnoremap :cd :cd %:p:h<cr>:pwd<CR>
-  " map <silent> :cd <leader>cd
 
   " quick backup file - use saveas! to replace original buffer
   map <silent> <Leader>b :up \| write!
     \ %:p:r-<C-R>=strftime("%d%b-%H:%M")<CR>-bak.<C-R>=expand("%:e")<CR><CR>
-
 
 " --- bubbles ---
   " Bubble single lines
@@ -78,20 +71,26 @@
   imap <silent> <S-Up> <ESC>xkP`[V`]i
   imap <silent> <S-Down> <ESC>xp`[V`]
 
+ "  magic spells
+  map <silent> <F5> :setlocal spell! spelllang=en_gb<CR>
+  " auto-accept first correction option
+  nmap <silent> <Leader>z 1z=
 
 " --- pluginz/leaderz ---
 
   ab wt :VimwikiTable
   nmap <silent> <Tab> <Plug>VimwikiNextLink
 
+  nmap <silent> <leader>o :only<CR>
+  nmap <silent> <leader>v :vsplit<CR>
+
+  map <silent> - :NERDTreeFind<CR>
   map <silent> <Leader>g :Goyo<CR>
+  map <silent> <Leader>st :Startify<CR>
   map <silent> <Leader>l :Limelight!!<CR>
   map <silent> <Leader>u  :MundoToggle<CR>
-  map <silent> <Leader>st :Startify<CR>
-  nmap <silent> <Leader>r <Plug>RefreshColorScheme
   map <silent> <Leader>n :NERDTreeFind<CR>
-  nmap <silent> <Leader><Space> :NERDTreeFind<CR>
-  map <silent> - :NERDTreeFind<CR>
+  nmap <silent> <Leader>r <Plug>RefreshColorScheme
 
 " →→ FZF
   " leader f for side/bottom pane
@@ -116,4 +115,65 @@
 
   " move underneath archive header
   nmap <silent> <F7> zRdd /## archive<CR>:nohl<CR> p``
+
+
+" pinched from unimpaired
+  function! BlankUp(count) abort
+    put!=repeat(nr2char(10), a:count)
+    ']+1
+    " silent! call repeat#set("\<Plug>unimpairedBlankUp", a:count)
+  endfunction
+
+  function! BlankDown(count) abort
+    put =repeat(nr2char(10), a:count)
+    '[-1
+    " silent! call repeat#set("\<Plug>unimpairedBlankDown", a:count)
+  endfunction
+
+  nmap [<Space> :call BlankUp(1)<CR>
+  nmap ]<Space> :call BlankDown(1)<CR>
+
+
+"... zoom/restore window.
+  function! ZoomToggle() abort
+    if exists('t:zoomed') && t:zoomed
+      execute t:zoom_winrestcmd
+      let t:zoomed = 0
+    else
+      let t:zoom_winrestcmd = winrestcmd()
+      resize
+      vertical resize
+      let t:zoomed = 1
+    endif
+  endfunction
+
+  nnoremap <silent> <C-A> :call ZoomToggle()<CR>
+
+
+" --- change colorscheme ---
+  function! ToggleColours()
+    if g:colors_name == 'gravy'
+      colo bubblegum-256-light
+    else
+      colo gravy
+    endif
+  endfunction
+
+  nnoremap <silent> <leader>cc :call ToggleColours()<CR>
+
+
+" syntaxy stuff
+  map <F10> :echo "hi<"
+    \ . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+    \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+    \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+  function! <SID>SynStack()
+    if !exists("*synstack")
+      return
+    endif
+    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+  endfunction
+
+  nmap <leader>sp :call <SID>SynStack()<CR>
 

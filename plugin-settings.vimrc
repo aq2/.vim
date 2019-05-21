@@ -67,11 +67,12 @@
 
 ""... misc
 
-  let g:user_emmet_install_global = 0
   augroup Emmet
     autocmd!
     autocmd! FileType html,css EmmetInstall
   augroup end
+
+  let g:user_emmet_install_global = 0
 
   let g:gitgutter_highlight_lines = 1
 
