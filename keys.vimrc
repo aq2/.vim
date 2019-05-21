@@ -177,3 +177,8 @@
 
   nmap <leader>sp :call <SID>SynStack()<CR>
 
+" change text size  on da fly
+  command! Bigger  let &guifont = substitute(&guifont, '\d\+', '\=submatch(0)+2', '')
+  command! Smaller let &guifont = substitute(&guifont, '\d\+', '\=submatch(0)-2', '')
+
+
