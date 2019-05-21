@@ -10,8 +10,8 @@
   nnoremap j gj
   nnoremap k gk
 
-  " leader Tab switches windows and sets pwd
-  map <silent> <leader><Tab> <C-W>W:cd %:p:h<CR>:<CR>
+  " leader Tab switches windows
+  map <silent> <Tab> <C-w><C-w>
 
   " remap arrow keys to scroll buffers
   nnoremap <silent> <S-Left> :bprev<CR>
@@ -79,7 +79,7 @@
 " --- pluginz/leaderz ---
 
   ab wt :VimwikiTable
-  nmap <silent> <Tab> <Plug>VimwikiNextLink
+  " nmap <silent> <Tab> <Plug>VimwikiNextLink
 
   nmap <silent> <leader>o :only<CR>
   nmap <silent> <leader>v :vsplit<CR>

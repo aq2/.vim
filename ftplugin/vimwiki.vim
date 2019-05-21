@@ -15,3 +15,4 @@
   imap <- <C-k><-
   imap ,- <C-k><-
 
+  map Tab <C-w><C-w>

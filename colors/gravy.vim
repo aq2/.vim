@@ -9,11 +9,11 @@
   let g:colors_name = "gravy"
 
 " set colour variables
+  let s:dpurple="#2b2b2b"
   let s:dgrape='#570246'
   let s:grape='#772266'
   let s:eggplant='#974286'
   let s:purple="#7f749d"
-  let s:dpurple="#2b2b2b"
   let s:plum="#b76690"
   let s:brown= "#b09676"
   let s:orange="#c8764a"
@@ -42,15 +42,16 @@
 " basic text
   exe 'hi Type guifg='s:plum
   exe 'hi Tag guifg='s:purple
-  exe 'hi Comment guifg='s:gray' gui=italic'
   exe 'hi PreProc guifg='s:plum
   exe 'hi Special guifg='s:gray
   exe 'hi Constant guifg='s:brown
   exe 'hi Underlined gui=underline'
   exe 'hi Operator guifg='s:eggplant
+  exe 'hi Comment guifg='s:gray' gui=italic'
   exe 'hi Statement guifg='s:purple' gui=bold'
   exe 'hi Normal guifg='s:white' guibg='s:dark
-  exe 'hi NonText guifg='s:dgray' guibg='s:dark
+  exe 'hi Blank guifg='s:dpurple' guibg='s:dpurple
+  exe 'hi NonText guifg='s:darker' guibg='s:darker
 
 "  erm, not sure really
   exe 'hi Search guibg='s:orange
