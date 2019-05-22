@@ -3,6 +3,8 @@
 
 "   init
   hi clear
+  " for kitty
+  let &t_ut=''
   set t_Co=256
   syntax reset
   set background=dark

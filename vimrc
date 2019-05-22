@@ -1,6 +1,5 @@
 "  general settings
 
-
   syntax on
   set signcolumn=no
   colorscheme gravy
@@ -36,9 +35,9 @@
   set gdefault
   set showmatch
   set completeopt=longest,menuone
+  set sps=best,10 " 10 best spells
   set ignorecase hlsearch incsearch
   set omnifunc=syntaxcomplete#Complete
-  set sps=best,10 " only show 10 best spell alternatives
   set wildmenu wildmode=longest:full,full
   set wildignore+=*/tmp/*,*.swp,*.zip,*.pdf,*/Music/*,*/Pictures/*
 
