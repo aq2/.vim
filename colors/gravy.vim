@@ -16,7 +16,8 @@
   let s:grape='#772266'
   let s:eggplant='#974286'
   let s:purple="#7f749d"
-  let s:plum="#b76690"
+  let s:plum="#974286"
+  " let s:plum="#b76690"
   let s:brown= "#b09676"
   let s:orange="#c8764a"
   let s:pink="#f83070"
@@ -34,6 +35,7 @@
   let s:grayish='#392e27'
 
 
+
 "   cursors
   set guicursor=i:ver20-iCursor
   hi iCursor guibg=yellow ctermbg=yellow
@@ -46,6 +48,7 @@
   exe 'hi Tag guifg='s:purple
   exe 'hi PreProc guifg='s:plum
   exe 'hi Special guifg='s:gray
+  exe 'hi Noise guifg='s:eggplant
   exe 'hi Constant guifg='s:brown
   exe 'hi Underlined gui=underline'
   exe 'hi Operator guifg='s:eggplant
@@ -128,8 +131,9 @@
 
   " Html Highlighting
   hi! link htmlTagName Statement
-  hi! link htmlTag Statement
-  hi! link htmlEndTag Statement
+  hi! link htmlTag Operator
+  hi! link htmlEndTag Operator
+  " hi! link htmlEndTag Statement
   exe 'hi htmlLink guifg='s:white' gui=underline'
   exe 'hi htmlSpecialTagName guifg='s:purple
 

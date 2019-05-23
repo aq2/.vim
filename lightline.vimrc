@@ -1,6 +1,6 @@
 "  custom lightline settings
 
-  source ~/.config/nvim/colors/gravyLine.vim
+  source ~/.vim/colors/gravyLine.vim
 
   let g:lightline = {
     \  'colorscheme': 'gravyLine',

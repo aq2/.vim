@@ -32,8 +32,7 @@
   set foldmethod=indent foldenable foldlevelstart=1
 
   set path+=**
-  set gdefault
-  set showmatch
+  set showmatch gdefault
   set completeopt=longest,menuone
   set sps=best,10 " 10 best spells
   set ignorecase hlsearch incsearch
@@ -44,10 +43,9 @@
   set viminfo+=n~/.vim/local/viminfo
 
   if exists('$SUDO_USER')
-    set nobackup
     set noswapfile
     set noundofile
-    set nowritebackup
+    set nowritebackup nobackup
   else
     set backupdir=~/.vim/local/backup//
     set directory=~/.vim/local/swap// directory+=.
@@ -73,11 +71,11 @@
 
 "  source other vim settings
   source $HOME/.vim/plug.vimrc
-  source /home/angelo/.vim/keys.vimrc
-  source /home/angelo/.vim/nerd.vimrc
-  source /home/angelo/.vim/lightline.vimrc
-  source /home/angelo/.vim/functions.vimrc
-  source /home/angelo/.vim/plugin-settings.vimrc
+  source $HOME/.vim/keys.vimrc
+  source $HOME/.vim/nerd.vimrc
+  source $HOME/.vim/lightline.vimrc
+  source $HOME/.vim/functions.vimrc
+  source $HOME/.vim/plugin-settings.vimrc
 
   set noshowmode
 
