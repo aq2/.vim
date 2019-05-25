@@ -30,7 +30,7 @@ let s:p.visual.right = [ [ s:purple, s:orange ] ]
 let s:p.replace.right = [ [ s:purple, s:orange ] ]
 
 "                        SEL   fg       bg
-let s:p.tabline.tabsel = [ [ s:white, s:orange ] ]
+let s:p.tabline.tabsel = [ [ s:white, s:dgray ] ]
 
 "  only for tabline
 let s:p.tabline.left = [ [ s:white, s:black ] ]

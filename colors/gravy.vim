@@ -162,4 +162,3 @@
     \ 'spinner': ['fg', 'Label'],
     \ 'header':  ['fg', 'Comment']
   \ }
-
