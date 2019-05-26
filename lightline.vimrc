@@ -19,7 +19,6 @@
     \    'lineinfo': 'MyLineInfo',
     \  },
   \ }
-    " \  'separator': { 'left': '' , 'right': '' },
 
 
   let g:lightline#bufferline#modified  = ' 😱'
