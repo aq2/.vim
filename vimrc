@@ -2,7 +2,7 @@
 
   syntax on
   set signcolumn=no
-  colorscheme gravy
+  colorscheme travy
   set background=dark
   set ambiwidth=double
   set highlight+=@:Blank
@@ -66,7 +66,8 @@
   let g:netrw_winsize = 25
   let g:netrw_liststyle = 3
   let g:netrw_dirhistmax = 0
-  let loaded_netrwPlugin = 1     " actually disables it, believe it or not
+  " let loaded_netrwPlugin = 1     " actually disables it, believe it or not
+  let NERDTreeHijackNetrw = 0
 
 
 "  source other vim settings

@@ -13,13 +13,13 @@ let s:orange = [ '#c8764a', 40 ]
 let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
 
 "                      MODE   fg      bg        git  fg      bg        unselected
-let s:p.normal.left =  [ [ s:white, s:purple ], [ s:gray, s:purple ] ]
-let s:p.insert.left =  [ [ s:black, s:orange ], [ s:gray, s:purple ], [ s:gray, s:black ] ]
-let s:p.visual.left =  [ [ s:black, s:orange ], [ s:gray, s:purple ], [ s:gray, s:black ] ]
-let s:p.replace.left = [ [ s:black, s:orange ], [ s:gray, s:purple ], [ s:gray, s:black ] ]
+let s:p.normal.left =  [ [ s:white, s:purple ], [ s:gray, s:black ] ]
+let s:p.insert.left =  [ [ s:black, s:orange ], [ s:gray, s:black], [ s:gray, s:black ] ]
+let s:p.visual.left =  [ [ s:black, s:orange ], [ s:gray, s:black], [ s:gray, s:black ] ]
+let s:p.replace.left = [ [ s:black, s:orange ], [ s:gray, s:black], [ s:gray, s:black ] ]
 
 "                       BAR   fg       bg
-let s:p.normal.middle = [ [ s:white, s:purple ] ]
+let s:p.normal.middle = [ [ s:white, s:black ] ]
 
 "                      RIGHT  fg       bg
 let s:p.normal.right = [ [ s:white, s:purple ], [ s:white, s:dgray ], [ s:white, s:purple ] ]

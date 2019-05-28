@@ -5,7 +5,7 @@
   let NERDTreeMapUpdir = '-'
   let NERDTreeQuitOnOpen = 1
   let NERDTreeNaturalSort = 1
-  let NERDTreeHijackNetrw = 1
+  " let NERDTreeHijackNetrw = 1
   let NERDTreeMapQuit = '<Esc>'
   let NERDTreeMapOpenInTab = '\t'
   let NERDTreeShowBookmarks = 1
@@ -24,7 +24,7 @@
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
     " dont open file in nerd window
-  autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" | b# | endif
+  " autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" | b# | endif
  augroup end
 
 
