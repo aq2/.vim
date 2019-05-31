@@ -38,7 +38,7 @@
 
 "   cursors
   set guicursor=i:ver20-iCursor
-  hi iCursor guibg=yellow ctermbg=yellow
+  " hi iCursor guibg=yellow ctermbg=yellow
   hi CursorLine guibg=#373632 guifg=NONE cterm=none
   autocmd InsertEnter * hi CursorLine guibg=#405000 cterm=none
   autocmd InsertLeave * hi CursorLine guibg=#373632 cterm=none
@@ -103,7 +103,7 @@
   exe 'hi DiffText guifg='s:pink' guibg='s:purple' gui=bold'
   exe 'hi DiffDelete guifg='s:plum' guibg='s:black' gui=none'
 
-"  vimwiki is changed
+"  vimwiki
   exe 'hi VimwikiLink guifg='s:purple' gui=bold'
   exe 'hi VimwikiHeader1 guifg='s:brite' gui=bold'
   exe 'hi VimwikiHeader2 guifg='s:orange' gui=bold'
