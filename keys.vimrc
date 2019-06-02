@@ -41,7 +41,6 @@
 
   cmap <silent> waq wqa<CR>
 
-  nnoremap <silent> <Leader>h :nohl<CR>
 
   " smarter paste on line above/below, rather than cursor position
   nnoremap ,p :put "<CR>
@@ -51,7 +50,6 @@
   nmap <silent> <Leader># yypgcck
   xmap <silent> <leader># yjpgV<Plug>Commentary<CR>
 
-  nnoremap <silent> <Leader>q :bd<CR>
   nnoremap :cd :cd %:p:h<cr>:pwd<CR>
 
   " quick backup file - use saveas! to replace original buffer
@@ -83,6 +81,9 @@
 
   nmap <silent> <leader>o :only<CR>
   nmap <silent> <leader>v :vsplit<CR>
+  nnoremap <silent> <Leader>q :bd<CR>
+  nnoremap <silent> <Leader>h :nohl<CR>
+  nmap <silent> <Leader>r <Plug>RefreshColorScheme
 
   map <silent> - :NERDTreeFind<CR>
   map <silent> <Leader>g :Goyo<CR>
@@ -90,17 +91,12 @@
   map <silent> <Leader>l :Limelight!!<CR>
   map <silent> <Leader>u  :MundoToggle<CR>
   map <silent> <Leader>n :NERDTreeFind<CR>
-  nmap <silent> <Leader>r <Plug>RefreshColorScheme
 
-" →→ FZF
-  " leader f for side/bottom pane
   nnoremap <silent> <Leader>f :FZF<CR>
-  nnoremap <silent> <Leader>\ :FZF<CR>
-  " leader p to search ~
   nnoremap <silent> <Leader>p :FZF ~<CR>
   nnoremap <silent> <Leader>m :History<CR>
 
-"  trailer trash sweetness
+"  trailer trash
   nnoremap <silent> <F12> :Trailer<CR>
   nnoremap <silent> <S-F12> :TrailerTrim<CR>
   vnoremap <silent> <S-F12> :TrailerTrim<CR>
@@ -176,6 +172,7 @@
   endfunction
 
   nmap <leader>sp :call <SID>SynStack()<CR>
+
 
 " change text size  on da fly
   command! Bigger  let &guifont = substitute(&guifont, '\d\+', '\=submatch(0)+2', '')

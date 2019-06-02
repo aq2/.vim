@@ -22,7 +22,7 @@
 
 
   let g:lightline#bufferline#modified  = ' 😱'
-  let g:lightline#bufferline#read_only  = ' '
+  let g:lightline#bufferline#read_only  = ' 🕱 '
   let g:lightline#bufferline#filename_modifier = ':~:.'
   let g:lightline.component_type   = {'buffers': 'tabsel'}
   let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}

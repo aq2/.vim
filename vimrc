@@ -1,5 +1,7 @@
 "  general settings
 
+  let $FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+
   syntax on
   set signcolumn=no
   colorscheme travy

@@ -6,14 +6,12 @@
   let NERDTreeQuitOnOpen = 1
   let NERDTreeNaturalSort = 1
   " let NERDTreeHijackNetrw = 1
+  let NERDTreeShowBookmarks = 1
   let NERDTreeToggle = '<Esc>'
   let NERDTreeMapOpenInTab = '\t'
-  let NERDTreeShowBookmarks = 1
   let NERDTreeRespectWildIgnore = 1
   let NERDTreeBookmarksFile = expand("$HOME/.vim/local/NERDTreeBookmarks")
 
-  " let NERDTreeMapJumpNextSibling = 'j'
-  " let NERDTreeMapJumpPrevSibling = 'k'
 
   augroup NERDTree
     autocmd!
@@ -21,7 +19,6 @@
     autocmd FileType nerdtree setlocal conceallevel=3
       \ | syntax match NERDTreeDirSlash #/$# containedin=NERDTreeDir conceal contained
     autocmd FileType nerdtree  map <buffer> <silent> <Leader>n :NERDTreeToggle<CR>
-    " autocmd FileType nerdtree  map <buffer> <Up> k
 
     " close vim if only buffer is nerd
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
