@@ -1,7 +1,5 @@
 "  general settings
 
-  let $FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
-
   syntax on
   set signcolumn=no
   colorscheme travy
@@ -54,6 +52,7 @@
     set undofile undodir=~/.vim/local/undo undodir+=.
   endif
 
+
 "  gvim settings
   if has('gui_running')
     set go=M
@@ -69,7 +68,6 @@
   let g:netrw_liststyle = 3
   let g:netrw_dirhistmax = 0
   " let loaded_netrwPlugin = 1     " actually disables it, believe it or not
-  let NERDTreeHijackNetrw = 0
 
 
 "  source other vim settings
@@ -80,6 +78,8 @@
   source $HOME/.vim/functions.vimrc
   source $HOME/.vim/plugin-settings.vimrc
 
+
+  " got to be here, otherwise something breaks
   set noshowmode
 
 " change cursor shape in terminal vim - but not color :(

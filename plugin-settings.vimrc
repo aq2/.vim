@@ -84,6 +84,7 @@
   let g:markology_ignore_type = "p"
 
   let g:fzf_layout = { 'left': '~28%' }
+  let $FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 
   augroup Fizzypop
     autocmd!

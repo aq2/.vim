@@ -4,8 +4,8 @@
   let NERDTreeMinimalUI = 1
   let NERDTreeMapUpdir = '-'
   let NERDTreeQuitOnOpen = 1
+  let NERDTreeHijackNetrw = 0
   let NERDTreeNaturalSort = 1
-  " let NERDTreeHijackNetrw = 1
   let NERDTreeShowBookmarks = 1
   let NERDTreeToggle = '<Esc>'
   let NERDTreeMapOpenInTab = '\t'
@@ -18,14 +18,14 @@
     " remove slashes from NERDTree
     autocmd FileType nerdtree setlocal conceallevel=3
       \ | syntax match NERDTreeDirSlash #/$# containedin=NERDTreeDir conceal contained
-    autocmd FileType nerdtree  map <buffer> <silent> <Leader>n :NERDTreeToggle<CR>
+    autocmd FileType nerdtree map <buffer> <silent> <Leader>n :NERDTreeToggle<CR>
 
     " close vim if only buffer is nerd
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
     " dont open file in nerd window
-  autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" | b# | endif
- augroup end
+    autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" | b# | endif
+  augroup end
 
 
 " -- File highlighting
