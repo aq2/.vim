@@ -2,7 +2,7 @@
   let g:vimwiki_folding='expr'
   let g:vimwiki_auto_header = 1
   let g:vimwiki_hl_cb_checked = 1
-  let g:vimwiki_listsyms = ' ∙ﱤﱣ✓'
+  let g:vimwiki_listsyms = ' 🞄⦁⬮✓'
 
   let wiki_1 = {}
   let wiki_1.ext = '.md'
