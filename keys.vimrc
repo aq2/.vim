@@ -10,7 +10,7 @@
   nnoremap j gj
   nnoremap k gk
 
-  " leader Tab switches windows
+  " Tab switches windows
   map <silent> <Tab> <C-w><C-w>
 
   " remap arrow keys to scroll buffers
@@ -22,11 +22,10 @@
   nnoremap ; :
 
   " stick help in virt split
-  " cnoremap help vert help<CR>
-  cabbrev h vert h
+  cabbrev help vert help
 
   " quick entry/exit into insert mode
-  " nnoremap <Space> li
+  nnoremap <Space> li
   " nnoremap <Del> i<Del>
 
   " .... old habits die hard
@@ -40,7 +39,6 @@
   cmap w!! w !sudo tee % >/dev/null
 
   cmap <silent> waq wqa<CR>
-
 
   " smarter paste on line above/below, rather than cursor position
   nnoremap ,p :put "<CR>
@@ -56,6 +54,7 @@
   map <silent> <Leader>b :up \| write!
     \ %:p:r-<C-R>=strftime("%d%b-%H:%M")<CR>-bak.<C-R>=expand("%:e")<CR><CR>
 
+
 " --- bubbles ---
   " Bubble single lines
   nmap <silent> <S-Up> ddkP
@@ -69,7 +68,7 @@
   imap <silent> <S-Up> <ESC>xkP`[V`]i
   imap <silent> <S-Down> <ESC>xp`[V`]
 
- "  magic spells
+ " magic spells
   map <silent> <F5> :setlocal spell! spelllang=en_gb<CR>
   " auto-accept first correction option
   nmap <silent> <Leader>z 1z=
@@ -77,7 +76,6 @@
 " --- pluginz/leaderz ---
 
   ab wt :VimwikiTable
-  " nmap <silent> <Tab> <Plug>VimwikiNextLink
 
   nmap <silent> <leader>o :only<CR>
   nmap <silent> <leader>v :vsplit<CR>
@@ -178,4 +176,20 @@
   command! Bigger  let &guifont = substitute(&guifont, '\d\+', '\=submatch(0)+2', '')
   command! Smaller let &guifont = substitute(&guifont, '\d\+', '\=submatch(0)-2', '')
 
+
+"  symbols
+  imap :) 😃
+  imap :( 😕
+  imap =+ ✚  
+  imap -_ ➖ 
+  imap /? ❓ 
+  imap 8* 🞺 
+  imap hh ♥
+  imap omg 😱
+  imap idee  
+  imap -> <C-k>->
+  imap -. <C-k>->
+  imap -= <C-k>->
+  imap <- <C-k><-
+  imap ,- <C-k><-
 
