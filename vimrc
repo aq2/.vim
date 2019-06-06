@@ -6,9 +6,9 @@
   set background=dark
   set ambiwidth=double
   set highlight+=@:Blank
-  set laststatus=2 showcmd
   set ttyfast termguicolors
   set splitbelow splitright
+  set laststatus=2 noshowcmd
   set rnu number numberwidth=4
   set cursorline scrolloff=6 nostartofline
 
@@ -81,10 +81,5 @@
 
   " got to be here, otherwise something breaks
   set noshowmode
-
-" change cursor shape in terminal vim - but not color :(
-  " let &t_SI = "\<Esc>[6 q"
-  " let &t_SR = "\<Esc>[4 q"
-  " let &t_EI = "\<Esc>[2 q"
-  " let &t_SI = "\<Esc>]12;orange\x7"
+  set noshowcmd
 

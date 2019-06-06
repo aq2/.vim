@@ -22,7 +22,7 @@ let s:p.replace.left = [ [ s:black, s:orange ], [ s:gray, s:black ] ]
 let s:p.normal.middle = [ [ s:white, s:black ] ]
 
 "                      RIGHT  fg       bg
-let s:p.normal.right = [ [ s:white, s:purple ], [ s:white, s:lblack ], [ s:white, s:purple ] ]
+let s:p.normal.right = [ [ s:white, s:purple ], [ s:white, s:black ], [ s:white, s:purple ] ]
 let s:p.insert.right = [ [ s:purple, s:orange ], [ s:white, s:lblack ], [ s:white, s:purple ] ]
 let s:p.visual.right = [ [ s:purple, s:orange ], [ s:white, s:lblack ], [ s:white, s:purple ] ]
 let s:p.replace.right = [ [ s:purple, s:orange ], [ s:white, s:lblack ], [ s:white, s:purple ]  ]

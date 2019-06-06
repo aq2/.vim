@@ -22,7 +22,7 @@
   nnoremap ; :
 
   " stick help in virt split
-  cabbrev help vert help
+  cabbrev h vert help
 
   " quick entry/exit into insert mode
   nnoremap <Space> li
@@ -38,6 +38,7 @@
   " w!! let's you sudo save a file
   cmap w!! w !sudo tee % >/dev/null
 
+  " three quarks for mister mark
   cmap <silent> waq wqa<CR>
 
   " smarter paste on line above/below, rather than cursor position
@@ -48,19 +49,24 @@
   nmap <silent> <Leader># yypgcck
   xmap <silent> <leader># yjpgV<Plug>Commentary<CR>
 
+  "change working directory to current file
   nnoremap :cd :cd %:p:h<cr>:pwd<CR>
 
   " quick backup file - use saveas! to replace original buffer
   map <silent> <Leader>b :up \| write!
     \ %:p:r-<C-R>=strftime("%d%b-%H:%M")<CR>-bak.<C-R>=expand("%:e")<CR><CR>
 
+  " don't lose selection when indenting
+  xnoremap <  <gv
+  xnoremap >  >gv
+
 
 " --- bubbles ---
   " Bubble single lines
-  nmap <silent> <S-Up> ddkP
-  imap <silent> <S-Up> <ESC>ddkPi
-  nmap <silent> <S-Down> ddp
-  imap <silent> <S-Down> <ESC>ddpi
+  nnoremap <S-Up> :<c-u>execute 'move -1-'. v:count1<cr>
+  nnoremap <S-Down> :<c-u>execute 'move +'. v:count1<cr>
+  inoremap <S-Up> <ESC>:<c-u>execute 'move -1-'. v:count1<cr>
+  inoremap <S-Down> <ESC>:<c-u>execute 'move +'. v:count1<cr>
 
   " Bubble multiple lines
   vmap <silent> <S-Up> xkP`[V`]
@@ -68,10 +74,11 @@
   imap <silent> <S-Up> <ESC>xkP`[V`]i
   imap <silent> <S-Down> <ESC>xp`[V`]
 
+
  " magic spells
-  map <silent> <F5> :setlocal spell! spelllang=en_gb<CR>
   " auto-accept first correction option
   nmap <silent> <Leader>z 1z=
+  map <silent> <F5> :setlocal spell! spelllang=en_gb<CR>
 
 " --- pluginz/leaderz ---
 
@@ -87,12 +94,16 @@
   map <silent> <Leader>g :Goyo<CR>
   map <silent> <Leader>st :Startify<CR>
   map <silent> <Leader>l :Limelight!!<CR>
-  map <silent> <Leader>u  :MundoToggle<CR>
+  map <silent> <Leader>u :MundoToggle<CR>
   map <silent> <Leader>n :NERDTreeFind<CR>
 
+  " fzf current pwd
   nnoremap <silent> <Leader>f :FZF<CR>
+  " fzf home folder
   nnoremap <silent> <Leader>p :FZF ~<CR>
+  " fzf most recently used
   nnoremap <silent> <Leader>m :History<CR>
+
 
 "  trailer trash
   nnoremap <silent> <F12> :Trailer<CR>
@@ -112,20 +123,24 @@
 
 
 " pinched from unimpaired
-  function! BlankUp(count) abort
-    put!=repeat(nr2char(10), a:count)
-    ']+1
-    " silent! call repeat#set("\<Plug>unimpairedBlankUp", a:count)
-  endfunction
+  " function! BlankUp(count) abort
+  "   put!=repeat(nr2char(10), a:count)
+  "   ']+1
+  "   " silent! call repeat#set("\<Plug>unimpairedBlankUp", a:count)
+  " endfunction
 
-  function! BlankDown(count) abort
-    put =repeat(nr2char(10), a:count)
-    '[-1
-    " silent! call repeat#set("\<Plug>unimpairedBlankDown", a:count)
-  endfunction
+  " function! BlankDown(count) abort
+  "   put =repeat(nr2char(10), a:count)
+  "   '[-1
+  "   " silent! call repeat#set("\<Plug>unimpairedBlankDown", a:count)
+  " endfunction
 
-  nmap [<Space> :call BlankUp(1)<CR>
-  nmap ]<Space> :call BlankDown(1)<CR>
+  " nmap [<Space> :call BlankUp(1)<CR>
+  " nmap ]<Space> :call BlankDown(1)<CR>
+
+" pinched from vim-galore
+  nnoremap [<space>  :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
+  nnoremap ]<space>  :<c-u>put =repeat(nr2char(10), v:count1)<cr>
 
 
 "... zoom/restore window.
@@ -177,16 +192,16 @@
   command! Smaller let &guifont = substitute(&guifont, '\d\+', '\=submatch(0)-2', '')
 
 
-"  symbols
+"  symbolology
   imap :) 😃
   imap :( 😕
   imap =+ ✚  
-  imap -_ ➖ 
+  imap -_ ╺╸
   imap /? ❓ 
   imap 8* 🞺 
   imap hh ♥
   imap omg 😱
-  imap idee  
+  imap idee 💡 
   imap -> <C-k>->
   imap -. <C-k>->
   imap -= <C-k>->
