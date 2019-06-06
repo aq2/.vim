@@ -11,7 +11,7 @@
     \  'inactive': {
     \    'right': [],
     \  },
-    \  'subseparator': { 'left': ' ', 'right': '' },
+    \  'subseparator': { 'left': '', 'right': '' },
     \  'component_function': {
     \    'mode': 'MyMode',
     \    'gitBranch': 'MyGit',
