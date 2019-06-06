@@ -25,6 +25,7 @@
     Plug 'mattn/emmet-vim'
     Plug 'mgee/lightline-bufferline'
     Plug 'mhinz/vim-startify'
+    Plug 'nathanaelkane/vim-indent-guides'
     Plug 'pangloss/vim-javascript'
     Plug 'scrooloose/nerdtree'
     Plug 'simnalamburt/vim-mundo'
