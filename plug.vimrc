@@ -22,7 +22,7 @@
     Plug 'junegunn/fzf.vim'
     Plug 'junegunn/goyo.vim'
     Plug 'junegunn/limelight.vim'
-    Plug 'mattn/emmet-vim'
+    " Plug 'mattn/emmet-vim'
     Plug 'mgee/lightline-bufferline'
     Plug 'mhinz/vim-startify'
     Plug 'nathanaelkane/vim-indent-guides'

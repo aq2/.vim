@@ -35,6 +35,7 @@
   endfunction
 
   call NERDTreeHilite('md',  '#974286', 'NONE')
+  call NERDTreeHilite('pug',  '#974286', 'NONE')
   call NERDTreeHilite('css', 'cyan', 'NONE')
   call NERDTreeHilite('vue', 'green', 'NONE')
   call NERDTreeHilite('styl', 'cyan', 'NONE')

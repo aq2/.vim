@@ -9,7 +9,7 @@
   set ttyfast termguicolors
   set splitbelow splitright
   set laststatus=2 noshowcmd
-  set rnu number numberwidth=4
+  set number numberwidth=4
   set cursorline scrolloff=6 nostartofline
 
   set nocompatible

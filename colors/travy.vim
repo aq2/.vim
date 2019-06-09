@@ -44,7 +44,8 @@
   let s:lred="#f83070"
 
   " lgreen
-  let s:brown= "#b09676"
+  let s:brown= "#80a666"
+  " let s:brown= "#b09676"
 
   " lorange/yel
   let s:orange="#c8764a"
