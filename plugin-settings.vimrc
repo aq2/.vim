@@ -19,6 +19,7 @@
   " autocmd BufNewFile *.md :r! echo = %:t:r =
   " autocmd BufNewFile *.md :norm kddo
 
+
 "... startify
   let g:startify_files_number = 8
   let g:startify_change_to_dir = 1
@@ -65,14 +66,8 @@
     autocmd! User GoyoEnter nested call <SID>goyo_enter()
   augroup end
 
+
 ""... misc
-
-  augroup Emmet
-    autocmd!
-    autocmd! FileType html,css EmmetInstall
-  augroup end
-
-  let g:user_emmet_install_global = 0
 
   let g:gitgutter_highlight_lines = 1
 
@@ -94,8 +89,7 @@
       \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
   augroup end
 
-
-
   let g:indent_guides_guide_size=1
   let g:indent_guides_start_level=2
   let g:indent_guides_color_change_percent = 3
+
