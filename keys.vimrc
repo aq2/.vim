@@ -103,6 +103,8 @@
   nnoremap <silent> <Leader>p :FZF ~<CR>
   " fzf most recently used
   nnoremap <silent> <Leader>m :History<CR>
+  " fzf current buffers
+  nnoremap <silent> <Leader><Leader> :Buffers<CR>
 
 
 "  trailer trash
@@ -121,22 +123,6 @@
   " move underneath archive header
   nmap <silent> <F7> zRdd /## archive<CR>:nohl<CR> p``
 
-
-" pinched from unimpaired
-  " function! BlankUp(count) abort
-  "   put!=repeat(nr2char(10), a:count)
-  "   ']+1
-  "   " silent! call repeat#set("\<Plug>unimpairedBlankUp", a:count)
-  " endfunction
-
-  " function! BlankDown(count) abort
-  "   put =repeat(nr2char(10), a:count)
-  "   '[-1
-  "   " silent! call repeat#set("\<Plug>unimpairedBlankDown", a:count)
-  " endfunction
-
-  " nmap [<Space> :call BlankUp(1)<CR>
-  " nmap ]<Space> :call BlankDown(1)<CR>
 
 " pinched from vim-galore
   nnoremap [<space>  :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
@@ -161,10 +147,10 @@
 
 " --- change colorscheme ---
   function! ToggleColours()
-    if g:colors_name == 'gravy'
+    if g:colors_name == 'travy'
       colo bubblegum-256-light
     else
-      colo gravy
+      colo travy
     endif
   endfunction
 

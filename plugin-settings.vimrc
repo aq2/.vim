@@ -27,6 +27,8 @@
   let g:startify_session_dir = '~/.vim/local/session'
   let g:startify_bookmarks = [ {'w': '~/vimwiki/index.md'} ]
   let g:startify_custom_header = map(startify#fortune#boxed(), '"    ".v:val')
+  let g:startify_bookmarks = [ {'c': '~/.vimrc'}, '~/.zshrc', '~/www/pughar/src/index.pug' ]
+
 
   augroup Startify
     autocmd!
@@ -37,9 +39,9 @@
   augroup end
 
   let g:startify_lists = [
-      \ { 'type': 'files',     'header': ['   MRU']        },
       \ { 'type': 'sessions',  'header': ['   Sessions']   },
       \ { 'type': 'bookmarks', 'header': ['   Bookmarks']  },
+      \ { 'type': 'files',     'header': ['   MRU']        },
   \ ]
 
 
