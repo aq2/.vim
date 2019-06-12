@@ -105,9 +105,9 @@
   exe 'hi Operator guifg='s:eggplant
   exe 'hi Comment guifg='s:lcyan' gui=italic'
   exe 'hi Statement guifg='s:blue' gui=bold'
-  exe 'hi Normal guifg='s:white' guibg='s:black
+  exe 'hi Normal guifg='s:white' guibg='s:dark
   exe 'hi Blank guifg='s:purple' guibg='s:purple
-  exe 'hi NonText guifg='s:black' guibg='s:black
+  exe 'hi NonText guifg='s:black' guibg='s:dark
 
 "  erm, not sure really
   exe 'hi Search guibg='s:orange
