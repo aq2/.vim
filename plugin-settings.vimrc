@@ -21,7 +21,7 @@
 
 
 "... startify
-  let g:startify_files_number = 8
+  let g:startify_files_number = 5
   let g:startify_change_to_dir = 1
   let g:startify_enable_special = 0
   let g:startify_session_dir = '~/.vim/local/session'
