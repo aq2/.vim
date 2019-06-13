@@ -6,10 +6,10 @@
   set background=dark
   set ambiwidth=double
   set highlight+=@:Blank
+  set number numberwidth=4
   set ttyfast termguicolors
   set splitbelow splitright
   set laststatus=2 noshowcmd
-  set number numberwidth=4
   set cursorline scrolloff=6 nostartofline
 
   set nocompatible
@@ -26,6 +26,7 @@
   set virtualedit=block
   set autoindent copyindent
   filetype plugin indent on
+  filetype plugin on
   set wrap whichwrap+=<,>,[,]
   set shiftround shiftwidth=2
   set smarttab tabstop=2 softtabstop=2 expandtab
@@ -80,6 +81,6 @@
 
 
   " got to be here, otherwise something breaks
-  set noshowmode
   set noshowcmd
+  set noshowmode
 

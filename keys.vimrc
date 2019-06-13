@@ -26,7 +26,7 @@
 
   " quick entry/exit into insert mode
   nnoremap <Space> li
-  " nnoremap <Del> i<Del>
+  nnoremap <Del> i<Del>
 
   " .... old habits die hard
   nnoremap <silent> <C-s> :w<CR>
@@ -53,7 +53,7 @@
   nnoremap :cd :cd %:p:h<cr>:pwd<CR>
 
   " quick backup file - use saveas! to replace original buffer
-  map <silent> <Leader>b :up \| write!
+  map <silent> <Leader>k :up \| write!
     \ %:p:r-<C-R>=strftime("%d%b-%H:%M")<CR>-bak.<C-R>=expand("%:e")<CR><CR>
 
   " don't lose selection when indenting
@@ -97,14 +97,14 @@
   map <silent> <Leader>u :MundoToggle<CR>
   map <silent> <Leader>n :NERDTreeFind<CR>
 
-  " fzf current pwd
-  nnoremap <silent> <Leader>f :FZF<CR>
   " fzf home folder
   nnoremap <silent> <Leader>p :FZF ~<CR>
   " fzf most recently used
   nnoremap <silent> <Leader>m :History<CR>
-  " fzf current buffers
-  nnoremap <silent> <Leader><Leader> :Buffers<CR>
+  " fzf current open buffers
+  nnoremap <silent> <Leader>b :Buffers<CR>
+  " fzf current pwd
+  nnoremap <silent> <Leader><Leader> :FZF<CR>
 
 
 "  trailer trash
@@ -183,7 +183,7 @@
   imap :( 😕
   imap =+ ✚  
   imap -_ ╺╸
-  imap /? ❓ 
+  imap /? ❓
   imap 8* 🞺 
   imap hh ♥
   imap omg 😱

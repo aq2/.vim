@@ -95,3 +95,5 @@
   let g:indent_guides_start_level=2
   let g:indent_guides_color_change_percent = 3
 
+
+  autocmd FileType styl set commentstring=//\ %s
