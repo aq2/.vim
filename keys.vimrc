@@ -104,8 +104,8 @@
   " fzf current open buffers
   nnoremap <silent> <Leader>b :Buffers<CR>
   " fzf current pwd
-  nnoremap <silent> <Leader><Leader> :FZF<CR>
-
+  " nnoremap <silent> <Leader><Leader> :FZF<CR>
+  nnoremap <silent> <Leader><Leader> :Files <C-R>=expand('%:h')<CR><CR>
 
 "  trailer trash
   nnoremap <silent> <F12> :Trailer<CR>

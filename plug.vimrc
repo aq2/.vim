@@ -25,7 +25,7 @@
     Plug 'mgee/lightline-bufferline'
     Plug 'mhinz/vim-startify'
     Plug 'nathanaelkane/vim-indent-guides'
-    Plug 'othree/html5.vim'
+    " Plug 'othree/html5.vim'
     Plug 'pangloss/vim-javascript'
     Plug 'scrooloose/nerdtree'
     Plug 'simnalamburt/vim-mundo'
