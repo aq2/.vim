@@ -27,6 +27,7 @@
     Plug 'nathanaelkane/vim-indent-guides'
     " Plug 'othree/html5.vim'
     Plug 'pangloss/vim-javascript'
+    Plug 'StanAngeloff/php.vim'
     Plug 'scrooloose/nerdtree'
     Plug 'simnalamburt/vim-mundo'
     " Plug 'storyn26383/vim-vue'

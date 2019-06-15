@@ -194,3 +194,4 @@
   imap <- <C-k><-
   imap ,- <C-k><-
 
+map <C-B> :!php -l %<CR>
