@@ -48,3 +48,9 @@ endfun
     autocmd BufWritePre *.md call LastModified()
   augroup end
 
+" " autocheck php files on save
+" augroup PHP
+"   autocmd!
+"   autocmd BufWritePost {*.php} echom system("php -l ".expand('%'))
+" augroup END
+

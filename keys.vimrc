@@ -104,8 +104,7 @@
   " fzf current open buffers
   nnoremap <silent> <Leader>b :Buffers<CR>
   " fzf current pwd
-  " nnoremap <silent> <Leader><Leader> :FZF<CR>
-  nnoremap <silent> <Leader><Leader> :Files <C-R>=expand('%:h')<CR><CR>
+  nnoremap <silent> <Leader><Leader> :Files <C-R>=expand(getcwd())<CR><CR>
 
 "  trailer trash
   nnoremap <silent> <F12> :Trailer<CR>
@@ -193,4 +192,4 @@
   imap -= <C-k>->
   imap <- <C-k><-
   imap ,- <C-k><-
-
+map <C-B> :!php -l %<CR>
