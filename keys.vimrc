@@ -192,4 +192,17 @@
   imap -= <C-k>->
   imap <- <C-k><-
   imap ,- <C-k><-
+
 map <C-B> :!php -l %<CR>
+
+
+nnoremap <leader>a :Rg<space>
+nnoremap <leader>A :exec "Rg ".expand("<cword>")<cr>
+
+autocmd VimEnter * command! -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
+>>>>>>> 19824f22a09ddff922029ef4d2af2bf8676a2fb1
