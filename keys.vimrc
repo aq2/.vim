@@ -40,14 +40,9 @@
 
   " three quarks for mister mark
   cmap <silent> waq wqa<CR>
-
-  " smarter paste on line above/below, rather than cursor position
-  nnoremap ,p :put "<CR>
-  nnoremap ,P :put! "<CR>
-
   " \# does copy/paste/comment in norm and viz modes too 😃
-  nmap <silent> <Leader># yypgcck
-  xmap <silent> <leader># yjpgV<Plug>Commentary<CR>
+  nmap <silent> <Leader>/ yypgcck
+  xmap <silent> <leader>/ yjpgV<Plug>Commentary<CR>
 
   "change working directory to current file
   nnoremap :cd :cd %:p:h<cr>:pwd<CR>
@@ -60,6 +55,8 @@
   xnoremap <  <gv
   xnoremap >  >gv
 
+  " check php file syntax
+  map <C-B> :!php -l %<CR>
 
 " --- bubbles ---
   " Bubble single lines
@@ -86,9 +83,9 @@
 
   nmap <silent> <leader>o :only<CR>
   nmap <silent> <leader>v :vsplit<CR>
-  nnoremap <silent> <Leader>q :bd<CR>
   nnoremap <silent> <Leader>h :nohl<CR>
-  nmap <silent> <Leader>r <Plug>RefreshColorScheme
+  nnoremap <silent> <Leader>q :Bdelete<CR>
+  " nmap <silent> <Leader>r <Plug>RefreshColorScheme
 
   map <silent> - :NERDTreeFind<CR>
   map <silent> <Leader>g :Goyo<CR>
@@ -98,13 +95,19 @@
   map <silent> <Leader>n :NERDTreeFind<CR>
 
   " fzf home folder
-  nnoremap <silent> <Leader>p :FZF ~<CR>
+  nnoremap <silent> <Leader># :FZF ~<CR>
   " fzf most recently used
   nnoremap <silent> <Leader>m :History<CR>
   " fzf current open buffers
   nnoremap <silent> <Leader>b :Buffers<CR>
   " fzf current pwd
   nnoremap <silent> <Leader><Leader> :Files <C-R>=expand(getcwd())<CR><CR>
+
+  " ripgrep
+  nnoremap <leader>r :Rg<space>
+  nnoremap <leader>R :exec "Rg ".expand("<cword>")<cr>
+
+
 
 "  trailer trash
   nnoremap <silent> <F12> :Trailer<CR>
@@ -123,9 +126,21 @@
   nmap <silent> <F7> zRdd /## archive<CR>:nohl<CR> p``
 
 
-" pinched from vim-galore
+" pinched from vim-galore - add empty lines above/below
   nnoremap [<space>  :<c-u>put! =repeat(nr2char(10), v:count1)<cr>'[
   nnoremap ]<space>  :<c-u>put =repeat(nr2char(10), v:count1)<cr>
+
+
+" smarter paste on line above/below, rather than cursor position
+  nnoremap ,p :put "<CR>
+  nnoremap ,P :put! "<CR>
+
+" miniyank - cycle yer yanx!
+  map p <Plug>(miniyank-startput)
+  map P <Plug>(miniyank-startPut)
+
+  map <leader>p <Plug>(miniyank-cycle)
+  map <leader>P <Plug>(miniyank-cycleback)
 
 
 "... zoom/restore window.
@@ -193,16 +208,3 @@
   imap <- <C-k><-
   imap ,- <C-k><-
 
-map <C-B> :!php -l %<CR>
-
-
-nnoremap <leader>a :Rg<space>
-nnoremap <leader>A :exec "Rg ".expand("<cword>")<cr>
-
-autocmd VimEnter * command! -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1,
-  \   <bang>0 ? fzf#vim#with_preview('up:60%')
-  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \   <bang>0)
->>>>>>> 19824f22a09ddff922029ef4d2af2bf8676a2fb1

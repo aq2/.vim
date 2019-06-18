@@ -8,11 +8,12 @@
 
   call plug#begin('~/.vim/plugged')
     Plug 'airblade/vim-gitgutter'
+    Plug 'bfredl/nvim-miniyank'
     Plug 'csexton/trailertrash.vim'
     Plug 'chrisbra/vim-zsh'
     Plug 'digitaltoad/vim-pug'
     " Plug 'ervandew/supertab'
-    " Plug 'hail2u/vim-css3-syntax'
+    Plug 'hail2u/vim-css3-syntax'
     Plug 'iloginow/vim-stylus'
     Plug 'itchyny/lightline.vim'
     Plug 'itchyny/vim-gitbranch'
@@ -24,6 +25,7 @@
     Plug 'junegunn/limelight.vim'
     Plug 'mgee/lightline-bufferline'
     Plug 'mhinz/vim-startify'
+    Plug 'moll/vim-bbye'
     Plug 'nathanaelkane/vim-indent-guides'
     Plug 'othree/html5.vim'
     Plug 'pangloss/vim-javascript'

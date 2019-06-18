@@ -12,12 +12,14 @@
   set laststatus=2 noshowcmd
   set cursorline scrolloff=6 nostartofline
 
-  set nocompatible
   set encoding=utf-8
   set hidden autoread
   set backspace=indent,start,eol
   set clipboard^=unnamed,unnamedplus
   set timeout updatetime=100 ttimeoutlen=20
+
+  filetype plugin on
+  filetype plugin indent on
 
   set linebreak
   set showbreak=˜
@@ -25,8 +27,6 @@
   set fillchars=""
   set virtualedit=block
   set autoindent copyindent
-  filetype plugin indent on
-  filetype plugin on
   set wrap whichwrap+=<,>,[,]
   set shiftround shiftwidth=2
   set smarttab tabstop=2 softtabstop=2 expandtab
@@ -57,7 +57,7 @@
 "  gvim settings
   if has('gui_running')
     set go=M
-    set linespace=4
+    set linespace=6
     set guifont=Fantasque\ Sans\ Mono\ 14
     set mousehide mousemodel=popup mouse=a
   endif
@@ -80,7 +80,7 @@
   source $HOME/.vim/plugin-settings.vimrc
 
 
-  " got to be here, otherwise something breaks
+" got to be here, otherwise something breaks
   set noshowcmd
   set noshowmode
 
