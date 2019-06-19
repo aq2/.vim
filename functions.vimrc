@@ -2,7 +2,6 @@
     let foldsize = (v:foldend-v:foldstart)
     return '▾'.getline(v:foldstart).'   ('.foldsize.' lines)    ▾ '
   endfunction
-
   set foldtext=MyFoldText()
 
 
@@ -18,6 +17,19 @@
     autocmd WinLeave * setlocal nocursorline
   augroup end
 
+
+  augroup SetupRipgrep
+    autocmd!
+    autocmd VimEnter * command! -nargs=* Rg
+      \ call fzf#vim#grep(
+      \   'rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1,
+      \   <bang>0 ? fzf#vim#with_preview('up:60%')
+      \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+      \   <bang>0)
+  augroup end
+
+
+" https://vim.fandom.com/wiki/Insert_current_date_or_time
 " If buffer modified, update any 'Last modified: ' in the first 20 lines.
 " 'Last modified: ' can have up to 10 characters before (they are retained).
 " Restores cursor and window position using save_cursor variable.
@@ -48,20 +60,4 @@ endfun
     autocmd BufWritePre *.md call LastModified()
   augroup end
 
-" " autocheck php files on save
-" augroup PHP
-"   autocmd!
-"   autocmd BufWritePost {*.php} echom system("php -l ".expand('%'))
-" augroup END
-
-
-  augroup SetupRipgrep
-    autocmd!
-    autocmd VimEnter * command! -nargs=* Rg
-      \ call fzf#vim#grep(
-      \   'rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1,
-      \   <bang>0 ? fzf#vim#with_preview('up:60%')
-      \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-      \   <bang>0)
-  augroup end
 

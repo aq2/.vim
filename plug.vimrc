@@ -25,6 +25,7 @@
     Plug 'junegunn/limelight.vim'
     Plug 'mgee/lightline-bufferline'
     Plug 'mhinz/vim-startify'
+    Plug 'maximbaz/lightline-ale'
     Plug 'moll/vim-bbye'
     Plug 'nathanaelkane/vim-indent-guides'
     Plug 'othree/html5.vim'
@@ -36,6 +37,7 @@
     " Plug 'storyn26383/vim-vue'
     Plug 'tpope/vim-commentary'
     Plug 'vimwiki/vimwiki'
+    Plug 'w0rp/ale'
     Plug 'yurifury/hexHighlight'
   call plug#end()
 

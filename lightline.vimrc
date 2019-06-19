@@ -6,7 +6,7 @@
     \  'colorscheme': 'gravyLine',
     \  'active': {
     \    'left': [['mode'], ['buffers']] ,
-    \    'right': [['percent'], ['lineinfo'], ['gitBranch']]
+    \    'right': [['percent'], ['lineinfo'], ['gitBranch'], [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ]]
     \  },
     \  'inactive': {
     \    'right': [],
@@ -17,15 +17,29 @@
     \    'gitBranch': 'MyGit',
     \    'percent': 'MyPercent',
     \    'lineinfo': 'MyLineInfo',
-    \  },
-  \ }
+    \   }
+    \ }
 
+
+  let g:lightline.component_expand = {
+      \  'buffers': 'lightline#bufferline#buffers',
+      \  'linter_checking': 'lightline#ale#checking',
+      \  'linter_warnings': 'lightline#ale#warnings',
+      \  'linter_errors': 'lightline#ale#errors',
+      \  'linter_ok': 'lightline#ale#ok',
+      \ }
+
+  let g:lightline.component_type = {
+      \     'buffers': 'tabsel',
+      \     'linter_checking': 'left',
+      \     'linter_warnings': 'warning',
+      \     'linter_errors': 'error',
+      \     'linter_ok': 'left',
+      \ }
 
   let g:lightline#bufferline#modified  = ' 😱'
   let g:lightline#bufferline#read_only  = ' 🕱 '
   let g:lightline#bufferline#filename_modifier = ':~:.'
-  let g:lightline.component_type   = {'buffers': 'tabsel'}
-  let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
   let g:lightline.tabline          = {'left': [['buffers']], 'right': [['close']]}
 
 	function! MyMode()
@@ -57,7 +71,7 @@
 
   augroup UpdateLightline
     autocmd!
-    au BufWritePost,TextChanged,TextChangedI * call MyLightlineUpdate()
+    au BufWritePost,TextChanged,TextChangedI,BufDelete * call MyLightlineUpdate()
   augroup end
 
 

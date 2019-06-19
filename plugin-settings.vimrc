@@ -31,7 +31,7 @@
     \ {'p': '~/www/pughar/sagharTODO.md'},
     \ {'w': '~/vimwiki/index.md'},
     \ {'z': '~/.zshrc'}
-    \ ]
+  \ ]
 
 
   augroup Startify
@@ -95,9 +95,20 @@
       \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
   augroup end
 
+
+" indent guides
   let g:indent_guides_guide_size=1
   let g:indent_guides_start_level=2
   let g:indent_guides_color_change_percent = 3
 
 
-  autocmd FileType styl set commentstring=//\ %s
+" ALE
+  let g:lightline#ale#indicator_ok = "OK"
+  let g:lightline#ale#indicator_errors = "❗"
+  let g:lightline#ale#indicator_checking = "."
+  let g:lightline#ale#indicator_warnings = "❗"
+
+  " only lint on save
+  " let g:ale_lint_on_enter = 0
+  " let g:ale_lint_on_text_changed = 'never'
+

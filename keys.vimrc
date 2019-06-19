@@ -44,7 +44,7 @@
   nmap <silent> <Leader>/ yypgcck
   xmap <silent> <leader>/ yjpgV<Plug>Commentary<CR>
 
-  "change working directory to current file
+  " change working directory to current file
   nnoremap :cd :cd %:p:h<cr>:pwd<CR>
 
   " quick backup file - use saveas! to replace original buffer
@@ -85,7 +85,6 @@
   nmap <silent> <leader>v :vsplit<CR>
   nnoremap <silent> <Leader>h :nohl<CR>
   nnoremap <silent> <Leader>q :Bdelete<CR>
-  " nmap <silent> <Leader>r <Plug>RefreshColorScheme
 
   map <silent> - :NERDTreeFind<CR>
   map <silent> <Leader>g :Goyo<CR>
@@ -108,7 +107,6 @@
   nnoremap <leader>R :exec "Rg ".expand("<cword>")<cr>
 
 
-
 "  trailer trash
   nnoremap <silent> <F12> :Trailer<CR>
   nnoremap <silent> <S-F12> :TrailerTrim<CR>
@@ -123,7 +121,7 @@
   nmap <silent> <F4> A ✓  <Esc><F3>li<Del><Esc>
 
   " move underneath archive header
-  nmap <silent> <F7> zRdd /## archive<CR>:nohl<CR> p``
+  nmap <silent> <F7> zRdd"x/## archive/e<CR>:nohl<CR>p"x``
 
 
 " pinched from vim-galore - add empty lines above/below
@@ -136,11 +134,11 @@
   nnoremap ,P :put! "<CR>
 
 " miniyank - cycle yer yanx!
-  map p <Plug>(miniyank-startput)
-  map P <Plug>(miniyank-startPut)
+  " map p <Plug>(miniyank-autoput)
+  " map P <Plug>(miniyank-autoPut)
 
-  map <leader>p <Plug>(miniyank-cycle)
-  map <leader>P <Plug>(miniyank-cycleback)
+  " map <leader>p <Plug>(miniyank-cycle)
+  " map <leader>P <Plug>(miniyank-cycleback)
 
 
 "... zoom/restore window.
