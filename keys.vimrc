@@ -40,7 +40,8 @@
 
   " three quarks for mister mark
   cmap <silent> waq wqa<CR>
-  " \# does copy/paste/comment in norm and viz modes too 😃
+
+  " \/ does copy/paste/comment in norm and viz modes too 😃
   nmap <silent> <Leader>/ yypgcck
   xmap <silent> <leader>/ yjpgV<Plug>Commentary<CR>
 
@@ -118,10 +119,14 @@
   nmap <silent> <F3> i<C-R>=strftime("%d %b %-H:%M")<CR><Esc>
 
   "  add date to end of line
-  nmap <silent> <F4> A ✓  <Esc><F3>li<Del><Esc>
+  " nmap <silent> <F4> A ✓  <Esc><F3>li<Del><Esc>
+  nmap <F4> A   ✓  <C-R>=strftime("%d %b %-H:%M")<CR><Esc>
 
-  " move underneath archive header
+  " move underneath archive header ✓ 20 Jun 13:10
   nmap <silent> <F7> zRdd"x/## archive/e<CR>:nohl<CR>p"x``
+
+  " complete, date and archive
+  nmap <F8> <C-Space><F4><F7>
 
 
 " pinched from vim-galore - add empty lines above/below

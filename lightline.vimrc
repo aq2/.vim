@@ -71,7 +71,7 @@
 
   augroup UpdateLightline
     autocmd!
-    au BufWritePost,TextChanged,TextChangedI,BufDelete * call MyLightlineUpdate()
+    au BufWritePost,TextChanged,TextChangedI,CursorHold * call MyLightlineUpdate()
   augroup end
 
 

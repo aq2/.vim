@@ -103,8 +103,8 @@
   exe 'hi Constant guifg='s:brown
   exe 'hi Underlined gui=underline'
   exe 'hi Operator guifg='s:eggplant
-  exe 'hi Comment guifg='s:lcyan' gui=italic'
-  exe 'hi Statement guifg='s:blue' gui=bold'
+  exe 'hi Comment guifg='s:lcyan' gui=italic cterm=italic'
+  exe 'hi Statement guifg='s:blue' gui=bold cterm=bold'
   exe 'hi Normal guifg='s:white' guibg='s:dark
   exe 'hi Blank guifg='s:purple' guibg='s:purple
   exe 'hi NonText guifg='s:black' guibg='s:dark
@@ -116,9 +116,9 @@
 
 "   highlights
   exe 'hi Function guifg='s:lwhite
-  exe 'hi Title guifg='s:lwhite' gui=bold'
-  exe 'hi Identifier guifg='s:lwhite' gui=italic'
-  exe 'hi Todo guifg='s:dark' guibg='s:brown' gui=bold'
+  exe 'hi Title guifg='s:lwhite' gui=bold cterm=bold'
+  exe 'hi Identifier guifg='s:lwhite' gui=italic cterm=italic'
+  exe 'hi Todo guifg='s:dark' guibg='s:brown' gui=bold cterm=bold'
 
 "   line numbers and ui stuff
   exe 'hi Folded guifg='s:lpurple' guibg='s:black
@@ -133,9 +133,9 @@
   exe 'hi PmenuSbar guibg='s:black
   exe 'hi Pmenu guifg='s:white' guibg='s:cyan
 
-  exe 'hi WildMenu guifg='s:white' guibg='s:dgray' gui=bold'
-  exe 'hi StatusLine guifg='s:orange' guibg='s:purple' gui=italic'
-  exe 'hi StatusLineNC guifg='s:lpurple' guibg='s:purple' gui=none'
+  exe 'hi WildMenu guifg='s:white' guibg='s:dgray' gui=bold cterm=bold'
+  exe 'hi StatusLine guifg='s:orange' guibg='s:purple' gui=italic cterm=italic'
+  exe 'hi StatusLineNC guifg='s:lpurple' guibg='s:purple' gui=none cterm=none'
 
   exe 'hi Directory guifg='s:blue
   exe 'hi MatchParen guifg='s:black' guibg='s:dgray
@@ -144,26 +144,26 @@
 " messages
   exe 'hi MoreMsg guifg='s:orange
   exe 'hi WarningMsg guifg='s:orange' guibg='s:black
-  exe 'hi Error guifg='s:dgray' guibg='s:lred' gui=bold'
-  exe 'hi ErrorMsg guifg='s:black' guibg='s:lred' gui=bold'
-  exe 'hi Question guifg='s:orange' guibg='s:dark' gui=bold'
+  exe 'hi Error guifg='s:dgray' guibg='s:lred' gui=bold cterm=bold'
+  exe 'hi ErrorMsg guifg='s:black' guibg='s:lred' gui=bold cterm=bold'
+  exe 'hi Question guifg='s:orange' guibg='s:dark' gui=bold cterm=bold'
   highlight link ALEErrorLine error
 
 
 "  diffy daff
   exe 'hi DiffAdd guibg='s:green
   exe 'hi DiffChange guibg='s:cyan
-  exe 'hi DiffText guifg='s:lred' guibg='s:blue' gui=bold'
-  exe 'hi DiffDelete guifg='s:lpurple' guibg='s:black' gui=none'
+  exe 'hi DiffText guifg='s:lred' guibg='s:blue' gui=bold cterm=bold'
+  exe 'hi DiffDelete guifg='s:lpurple' guibg='s:black' gui=none cterm=none'
 
 "  vimwiki is changed
-  exe 'hi VimwikiLink guifg='s:blue' gui=bold'
-  exe 'hi VimwikiHeader1 guifg='s:lwhite' gui=bold'
-  exe 'hi VimwikiHeader2 guifg='s:orange' gui=bold'
-  exe 'hi VimwikiHeader3 guifg='s:brown' gui=bold'
-  exe 'hi VimwikiHeader4 guifg='s:lpurple' gui=bold'
-  exe 'hi VimwikiHeader5 guifg='s:lred' gui=bold'
-  exe 'hi VimwikiHeader6 guifg='s:eggplant' gui=bold'
+  exe 'hi VimwikiLink guifg='s:blue' gui=bold cterm=bold'
+  exe 'hi VimwikiHeader1 guifg='s:orange' gui=bold cterm=bold'
+  exe 'hi VimwikiHeader2 guifg='s:lpurple' gui=bold cterm=bold'
+  exe 'hi VimwikiHeader4 guifg='s:brown' gui=bold cterm=bold'
+  exe 'hi VimwikiHeader4 guifg='s:lred' gui=bold cterm=bold'
+  exe 'hi VimwikiHeader5 guifg='s:lwhite' gui=bold cterm=bold'
+  exe 'hi VimwikiHeader6 guifg='s:eggplant' gui=bold cterm=bold'
 
 "  markology
   exe 'hi MarkologyHLl guifg='s:lcyan' guibg='s:black
@@ -176,9 +176,9 @@
   exe 'hi pythonBuiltin guifg='s:blue
   " exe 'hi pythonBuiltinFunc guifg='s:blue
 
-  " Javascript Highlighting 
+  " Javascript Highlighting
   exe 'hi jsBuiltins guifg='s:blue
-  exe 'hi jsFunction guifg='s:blue' gui=bold'
+  exe 'hi jsFunction guifg='s:blue' gui=bold cterm=bold'
   exe 'hi jsGlobalObjects guifg='s:lpurple
   exe 'hi jsAssignmentExps guifg='s:blue
 

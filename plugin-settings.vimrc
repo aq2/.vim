@@ -9,6 +9,7 @@
   let wiki_1.list_margin = 0
   let wiki_1.path = '~/vimwiki/'
   let wiki_1.syntax = 'markdown'
+  let wiki_1.auto_diary_index = 1
   let g:vimwiki_list = [wiki_1]
 
   augroup Wiki

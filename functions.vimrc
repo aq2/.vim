@@ -50,14 +50,14 @@ endfun
     let save_cursor = getpos(".")
     " can have 10 chars before (handy for comment chars)
     keepjumps exe '1,' . n . 's#^\(.\{,10}Last modified: \).*#\1' .
-      \ strftime('%a %b %d, %Y  %H:%M') . '#e'
+      \ strftime('%a %d %b, %Y  %H:%M') . '#e'
     call histdel('search', -1)
     call setpos('.', save_cursor)
   endfunction
 
   augroup WriteTimestampOnSave
     autocmd!
-    autocmd BufWritePre *.md call LastModified()
+    autocmd BufWritePre *.md call UpdateLastModified()
   augroup end
 
 
