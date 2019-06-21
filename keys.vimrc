@@ -29,8 +29,8 @@
   nnoremap <Del> i<Del>
 
   " .... old habits die hard
-  nnoremap <silent> <C-s> :w<CR>
-  nnoremap <silent> <C-S> :wa<CR>
+  nnoremap <silent> <C-s> :up<CR>
+  nnoremap <silent> <C-S> :up<CR>
 
   " highlight last inserted text
   nnoremap gV `[v`]
@@ -40,6 +40,7 @@
 
   " three quarks for mister mark
   cmap <silent> waq wqa<CR>
+  cmap <silent> Q q<CR>
 
   " \/ does copy/paste/comment in norm and viz modes too 😃
   nmap <silent> <Leader>/ yypgcck

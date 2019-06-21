@@ -28,12 +28,17 @@
   let g:startify_session_autoload = 1
   let g:startify_session_dir = '~/.vim/local/session'
   let g:startify_custom_header = map(startify#fortune#boxed(), '"    ".v:val')
+
   let g:startify_bookmarks = [
     \ {'p': '~/www/pughar/sagharTODO.md'},
-    \ {'w': '~/vimwiki/index.md'},
-    \ {'z': '~/.zshrc'}
+    \ {'w': '~/vimwiki/index.md'}
   \ ]
 
+  let g:startify_lists = [
+      \ { 'type': 'sessions',  'header': ['   Sessions']   },
+      \ { 'type': 'bookmarks', 'header': ['   Bookmarks']  },
+      \ { 'type': 'files',     'header': ['   MRU']        },
+  \ ]
 
   augroup Startify
     autocmd!
@@ -42,12 +47,6 @@
     autocmd FileType startify map <buffer> - :NERDTreeToggle<CR>
     autocmd FileType startify map <buffer> <Leader>n :NERDTreeToggle<CR>
   augroup end
-
-  let g:startify_lists = [
-      \ { 'type': 'sessions',  'header': ['   Sessions']   },
-      \ { 'type': 'bookmarks', 'header': ['   Bookmarks']  },
-      \ { 'type': 'files',     'header': ['   MRU']        },
-  \ ]
 
 
 "... Goyo and limelight
@@ -91,7 +90,6 @@
 
   augroup Fizzypop
     autocmd!
-    " autocmd BufLeave <buffer> set laststatus=2 showmode ruler
     autocmd  FileType fzf set laststatus=0 noshowmode noruler
       \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
   augroup end
