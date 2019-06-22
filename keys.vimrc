@@ -121,7 +121,7 @@
 
   "  add date to end of line
   " nmap <silent> <F4> A ✓  <Esc><F3>li<Del><Esc>
-  nmap <F4> A   ✓  <C-R>=strftime("%d %b %-H:%M")<CR><Esc>
+  nmap <F4> A  ✓ <C-R>=strftime("%d %b %-H:%M")<CR><Esc>
 
   " move underneath archive header ✓ 20 Jun 13:10
   nmap <silent> <F7> zRdd"x/## archive/e<CR>:nohl<CR>p"x``
