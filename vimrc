@@ -56,7 +56,7 @@
 
 "  gvim settings
   if has('gui_running')
-    set go=M
+    set guioptions=M
     set linespace=6
     set guifont=Fantasque\ Sans\ Mono\ 14
     set mousehide mousemodel=popup mouse=a
