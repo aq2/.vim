@@ -58,7 +58,8 @@
   if has('gui_running')
     set guioptions=M
     set linespace=6
-    set guifont=FantasqueSansMono\ Nerd\ Font\ 14
+    set guifont=CodeNewRoman\ Nerd\ Font\ 15
+    " set guifont=Fantasque\ Sans\ Mono\ 14
     set mousehide mousemodel=popup mouse=a
   endif
 

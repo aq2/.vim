@@ -35,6 +35,9 @@
   " highlight last inserted text
   nnoremap gV `[v`]
 
+  " paste from yank register
+  nnoremap <silent> <leader>p "0p
+
   " w!! let's you sudo save a file
   cmap w!! w !sudo tee % >/dev/null
 
