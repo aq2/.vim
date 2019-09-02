@@ -20,6 +20,8 @@
 
   filetype plugin on
   filetype plugin indent on
+  autocmd BufRead,BufNewFile *.pup set filetype=pug
+  autocmd BufRead,BufNewFile *.inc set filetype=php
 
   set linebreak
   set showbreak=˜
