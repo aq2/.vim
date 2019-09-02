@@ -1,0 +1,2 @@
+imap -> ->
+setlocal commentstring=//\ %s
