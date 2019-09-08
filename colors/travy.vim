@@ -118,7 +118,7 @@
   exe 'hi Function guifg='s:lwhite
   exe 'hi Title guifg='s:lwhite' gui=bold cterm=bold'
   exe 'hi Identifier guifg='s:lwhite' gui=italic cterm=italic'
-  exe 'hi Todo guifg='s:dark' guibg='s:brown' gui=bold cterm=bold'
+  exe 'hi Todo guifg='s:orange' guibg='s:dark' gui=bold cterm=bold'
 
 "   line numbers and ui stuff
   exe 'hi Folded guifg='s:lpurple' guibg='s:black
