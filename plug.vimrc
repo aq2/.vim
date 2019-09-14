@@ -24,6 +24,7 @@
     Plug 'junegunn/fzf.vim'
     Plug 'junegunn/goyo.vim'
     Plug 'junegunn/limelight.vim'
+    Plug 'justinmk/vim-dirvish'
     Plug 'maximbaz/lightline-ale'
     Plug 'mgee/lightline-bufferline'
     Plug 'mhinz/vim-startify'

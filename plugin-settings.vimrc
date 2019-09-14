@@ -30,8 +30,9 @@
   let g:startify_custom_header = map(startify#fortune#boxed(), '"    ".v:val')
 
   let g:startify_bookmarks = [
-    \ {'p': '~/www/pughar/sagharTODO.md'},
-    \ {'w': '~/vimwiki/index.md'}
+    \ {'p': '~/www/lap/src/php/'},
+    \ {'w': '~/vimwiki/index.md'},
+    \ {'l': '~/www/lap/src/php/table_view.php'}
   \ ]
 
   let g:startify_lists = [
@@ -108,6 +109,11 @@
   let g:lightline#ale#indicator_warnings = "❗"
 
   let g:ale_lint_on_enter = 1
+  let g:ale_linters = {
+        \   'php' : ['php'],
+   \}
+
+
   " only lint on save
   " let g:ale_lint_on_text_changed = 'never'
 

@@ -144,10 +144,11 @@
 " messages
   exe 'hi MoreMsg guifg='s:orange
   exe 'hi WarningMsg guifg='s:orange' guibg='s:black
-  exe 'hi Error guifg='s:dgray' guibg='s:lred' gui=bold cterm=bold'
+  exe 'hi Error guifg='s:dgray' guibg='s:lcyan' gui=bold cterm=bold'
   exe 'hi ErrorMsg guifg='s:black' guibg='s:lred' gui=bold cterm=bold'
   exe 'hi Question guifg='s:orange' guibg='s:dark' gui=bold cterm=bold'
   highlight link ALEErrorLine error
+  highlight ALEWarning ctermbg=Red
 
 
 "  diffy daff
