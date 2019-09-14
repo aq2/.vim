@@ -107,7 +107,7 @@
   let g:lightline#ale#indicator_checking = "."
   let g:lightline#ale#indicator_warnings = "❗"
 
+  let g:ale_lint_on_enter = 1
   " only lint on save
-  " let g:ale_lint_on_enter = 0
   " let g:ale_lint_on_text_changed = 'never'
 

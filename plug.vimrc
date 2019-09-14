@@ -11,6 +11,7 @@
     Plug 'bfredl/nvim-miniyank'
     Plug 'csexton/trailertrash.vim'
     Plug 'chrisbra/vim-zsh'
+    Plug 'dense-analysis/ale'
     Plug 'digitaltoad/vim-pug'
     " Plug 'ervandew/supertab'
     Plug 'hail2u/vim-css3-syntax'
@@ -36,7 +37,6 @@
     " Plug 'storyn26383/vim-vue'
     Plug 'tpope/vim-commentary'
     Plug 'vimwiki/vimwiki'
-    Plug 'w0rp/ale'
     Plug 'yurifury/hexHighlight'
   call plug#end()
 
