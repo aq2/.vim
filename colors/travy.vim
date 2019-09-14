@@ -115,7 +115,7 @@
   exe 'hi IncSearch guifg='s:white' guibg='s:dark
 
 "   highlights
-  exe 'hi Function guifg='s:lwhite
+  exe 'hi Function guifg='s:orange
   exe 'hi Title guifg='s:lwhite' gui=bold cterm=bold'
   exe 'hi Identifier guifg='s:lwhite' gui=italic cterm=italic'
   exe 'hi Todo guifg='s:orange' guibg='s:dark' gui=bold cterm=bold'
